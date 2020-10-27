@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes">
+    <title>农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <style>
+        .chosen{
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 4px;
+        }
+        .header-bg{
+            /* background: url('./img/news/bg.png') no-repeat      center center; */
+            /* height: 348px; */
+            /* background-color: #3670E7; */
+            background-color: #3C5DA6;
+        }
+        
+
+        .news-main-title{
+            padding-left: 44px;
+            margin-top: 47px;
+            line-height: 21px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #999999;
+        }
+        .caret-right{
+           margin: 0 10px;
+        }
+
+        .news-main-banner{
+            margin-top: 31px;
+            width:100%;
+            height: 485px;
+            background-color: #555555;
+        }
+        .news-main-banner img{
+            width: 1200px;
+            height: 485px;
+        }
+        .news-main-title2{
+            display: flex;
+            margin-top: 27px;
+           
+        }
+        .time{
+            width: 92px;
+            height: 80px;
+            opacity: 0.59;
+            background: #3C5DA6;
+            margin-right: 19px;
+        }
+        .time p{
+            text-align: center;
+        }
+        .time p:nth-child(1){
+            /* width: 46px; */
+            /* height: 27px; */
+            font-size: 34px;
+            font-weight: 800;
+            color: #FFFFFF;
+
+        }
+        .time p:nth-child(2){
+            
+            font-size: 14px;
+            font-weight: 800;
+            color: #FFFFFF;
+
+        }
+        .title-title{
+            display: inline-block;
+            font-weight: 400;
+            color: #3B393B;
+        }
+        .title-title p:nth-child(1){
+            font-size: 24px;
+            line-height: 29px;
+            margin-top: 15px;
+        }
+        .title-title p:nth-child(2){
+            margin-top: 6px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .news-main-text{
+            /* width: 1188px; */
+            /* height: 130px; */
+            font-size: 16px;
+            /* font-family: Source Han Sans CN; */
+            font-weight: 400;
+            color: #666666;
+            line-height: 28px;
+            margin-top: 16px;
+            overflow: hidden;
+            margin-bottom: 136px;
+            /* overflow解决margin叠加问题 */
+            text-indent: 32px;
+        }
+        .news-main-text p{
+            margin-top: 16px;
+        }
+        .news-main-title span{
+            cursor: pointer;
+        }
+        .news-main-title span:hover{
+            color: #3670E7;
+        }
+    </style>
+   
+    <script src="./swiper/js/swiper.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="container-fluid header-bg" >
+            <!-- 通用导航栏 -->
+            <script>
+                function showshadow(){
+                    var obg=document.getElementById("header-top")
+                    // console.log(555)
+                    obg.classList.add("header-focus")
+                    // obg.style.background='black'
+                    
+                }
+                function hideshadow(){
+                    var obg=document.getElementById("header-top")
+                    obg.classList.remove("header-focus")
+                    // obg.style.background='none'
+                }
+                
+            </script>   
+
+            <div class="container-fluid header-top" id="header-top"  onmouseover="showshadow()" onmouseout="hideshadow()" >
+                <div class="container nav-line">
+                    <div class="col-xs-3 nav-height" >
+                        <div style="background: url('./img/index/logo.png'); width: 135px ;height: 52px;">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nav-height">
+                        <ul class="nav-ul" >
+                            <li>
+                                <a href="./index.html" class="">首页</a>
+                                <!-- <span class="chosen">首页</span> -->
+                            </li>
+                            <li>
+                                <a  href="./credit-service.html">农信服务</a>
+                                <!-- <span>农信服务</span> -->
+                            </li>
+                            <li   style="position: relative;"  id="gogogo" >
+                                <a href="./news.html" class="chosen">新闻动态</a>
+
+                                <ul  style="    top: 102px; position: absolute; height: auto; background: rgba(0,0,0,0.9);">
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoice">
+                                        <a href="./enterprise-join.html">企业加盟</a> </li>
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoices">
+                                        <a href="./news.html">新闻动态</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <script >
+                                function myClickshow(){ 
+                                var oLi=document.querySelector('#gogogo')
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // oLi.style.height="100px";
+                                event.style.display="block";
+                                events.style.display="block";
+                            }
+                                function myClickhide(){
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // console.log(111)
+                                event.style.display="none";
+                                events.style.display="none";
+                            }
+                            </script>
+                            <!-- <li>
+                                <a href="#">公共服务</a>
+                                
+                            </li> -->
+                            <li>
+                                <a href="./contact.html">联系我们</a>
+                                <!-- <span>联系我们</span> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 nav-height">
+                        <div class="col-xs-6 col-xs-offset-6 nav-height">
+                            <ul class="nav-loggin">
+                                <li>
+                                    <a href="login.html">登录</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">注册</a>
+                                 </li>
+                            </ul>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="container">
+            <div class="news-main-title">
+             <span onclick = "window.location.href = './news.html'">新闻动态</span>   <i class="fa fa-caret-right caret-right" aria-hidden="true"></i> <span onclick = "location.reload()">新闻详情</span> 
+                <!-- 首页<i class="fa fa-caret-right caret-right" aria-hidden="true"></i>新闻动态  <i class="fa fa-caret-right caret-right" aria-hidden="true"></i>新闻详情 -->
+            </div>
+            <div class="row">
+                <div class="row news-main-banner">
+                    <img src="./img/news/news-img5.png" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="news-main-title2">
+                    <div class="time">
+                        <p>02</p>
+                        <p>2020/10</p>
+                    </div>
+                    <div class="title-title">
+                        <p>NGK公链的溯源支付体系正在加速落地</p>
+                        <p>浏览次数：1231</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="news-main-text">
+                    <p>
+                        由于传统的溯源行业面临不被信任、被篡改、追溯手段简单等各种问题，使得区块链为溯源信息提供了新的工具。有了区块链技术的加持，所有信息即时上链就无法更改，特别是区块链的去中心化特征解决了溯源中最大的难题信任问题，也提供了公信力溯源能力。
+                    </p>
+                    <p>NGK公链，作为基于区块链技术的去中心化商业应用平台，积极探索解决交易支付溯源问题。借助区块链这项技术，NGK公链将交易双方的交易、生成及商品流通以及销售过程等信息都整合写入到区块链当中，既可有效地保证数据真实性，又能实现全流程的追溯。信息上链，就代表了不可篡改性，也确定了支付交易双方唯一的身份，基于此实现了这个身份流转的所有追踪和记录。</p>
+                    <p>NGK结合区块链去中心化和不可篡改的特性，通过机器语言来解决数据来源和数据信任问题，保证NGK链上全链条的数据真实性。NGK的设计既为数字交易上的数据传输和价值流转提供稳定可靠的技术平台，又能保证支付交易数据在采集、运算、存储和传输过程的安全。</p>
+                    <p>NGK全链的一切制度都是基于区块链的底层设施，同时按照智能合约去运行，利用NGK分布式存储，来保证全链条的数据真实性，公开、透明、公正、不可篡改和数据可追溯。</p>
+                    <p>NGK为溯源支付数据的隐私保护、协同计算提供基础设施和全方位治理；并且高效、安全实现溯源数据的充分流动。与此同时，NGK充分利用区块链分布式数据存储、共识机制、点对点传输等技术，加密共享交易信息，完成各行各业内应用系统与区块链平台的整合，无缝衔接新技术、传统行业和现有应用系统。</p>
+                    <p>区块链光环下的溯源能力，被NGK深度赋能于综合支付的交易体系当中。NGK将以崭新的思维模式、技术架构推动整个支付经济的技术、框架、效率以及模式的变革！</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <!-- 底部固定框 -->
+    <footer class="container-fluid footer-block">
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：010 5150 3423</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：sunch@nercita.org.cn</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html> 

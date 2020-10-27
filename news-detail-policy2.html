@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes">
+    <title>农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <style>
+        .chosen{
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 4px;
+        }
+        .header-bg{
+            /* background: url('./img/news/bg.png') no-repeat      center center; */
+            /* height: 348px; */
+            /* background-color: #3670E7; */
+            background-color: #3C5DA6;
+        }
+        
+
+        .news-main-title{
+            padding-left: 44px;
+            margin-top: 47px;
+            line-height: 21px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #999999;
+        }
+        .caret-right{
+           margin: 0 10px;
+        }
+
+        .news-main-banner{
+            margin-top: 31px;
+            width:100%;
+            height: 485px;
+            background-color: #555555;
+        }
+        .news-main-banner img{
+            width: 1200px;
+            height: 485px;
+        }
+        .news-main-title2{
+            display: flex;
+            margin-top: 27px;
+           
+        }
+        .time{
+            width: 92px;
+            height: 80px;
+            opacity: 0.59;
+            background: #3C5DA6;
+            margin-right: 19px;
+        }
+        .time p{
+            text-align: center;
+        }
+        .time p:nth-child(1){
+            /* width: 46px; */
+            /* height: 27px; */
+            font-size: 34px;
+            font-weight: 800;
+            color: #FFFFFF;
+
+        }
+        .time p:nth-child(2){
+            
+            font-size: 14px;
+            font-weight: 800;
+            color: #FFFFFF;
+
+        }
+        .title-title{
+            display: inline-block;
+            font-weight: 400;
+            color: #3B393B;
+        }
+        .title-title p:nth-child(1){
+            font-size: 24px;
+            line-height: 29px;
+            margin-top: 15px;
+        }
+        .title-title p:nth-child(2){
+            margin-top: 6px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+        .news-main-text{
+            /* width: 1188px; */
+            /* height: 130px; */
+            font-size: 16px;
+            /* font-family: Source Han Sans CN; */
+            font-weight: 400;
+            color: #666666;
+            line-height: 28px;
+            margin-top: 16px;
+            overflow: hidden;
+            margin-bottom: 136px;
+            /* overflow解决margin叠加问题 */
+            text-indent: 32px;
+        }
+        .news-main-text p{
+            margin-top: 16px;
+        }
+        .news-main-title span{
+            cursor: pointer;
+        }
+        .news-main-title span:hover{
+            color: #3670E7;
+        }
+    </style>
+   
+    <script src="./swiper/js/swiper.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="container-fluid header-bg" >
+            <!-- 通用导航栏 -->
+            <script>
+                function showshadow(){
+                    var obg=document.getElementById("header-top")
+                    // console.log(555)
+                    obg.classList.add("header-focus")
+                    // obg.style.background='black'
+                    
+                }
+                function hideshadow(){
+                    var obg=document.getElementById("header-top")
+                    obg.classList.remove("header-focus")
+                    // obg.style.background='none'
+                }
+                
+            </script>   
+
+            <div class="container-fluid header-top" id="header-top"  onmouseover="showshadow()" onmouseout="hideshadow()" >
+                <div class="container nav-line">
+                    <div class="col-xs-3 nav-height" >
+                        <div style="background: url('./img/index/logo.png'); width: 135px ;height: 52px;">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nav-height">
+                        <ul class="nav-ul" >
+                            <li>
+                                <a href="./index.html" class="">首页</a>
+                                <!-- <span class="chosen">首页</span> -->
+                            </li>
+                            <li>
+                                <a  href="./credit-service.html">农信服务</a>
+                                <!-- <span>农信服务</span> -->
+                            </li>
+                            <li   style="position: relative;"  id="gogogo" >
+                                <a href="./news.html" class="chosen">新闻动态</a>
+
+                                <ul  style="    top: 102px; position: absolute; height: auto; background: rgba(0,0,0,0.9);">
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoice">
+                                        <a href="./enterprise-join.html">企业加盟</a> </li>
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoices">
+                                        <a href="./news.html">新闻动态</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <script >
+                                function myClickshow(){ 
+                                var oLi=document.querySelector('#gogogo')
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // oLi.style.height="100px";
+                                event.style.display="block";
+                                events.style.display="block";
+                            }
+                                function myClickhide(){
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // console.log(111)
+                                event.style.display="none";
+                                events.style.display="none";
+                            }
+                            </script>
+                            <!-- <li>
+                                <a href="#">公共服务</a>
+                            </li> -->
+                            <li>
+                                <a href="./contact.html">联系我们</a>
+                                <!-- <span>联系我们</span> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 nav-height">
+                        <div class="col-xs-6 col-xs-offset-6 nav-height">
+                            <ul class="nav-loggin">
+                                <li>
+                                    <a href="login.html">登录</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">注册</a>
+                                 </li>
+                            </ul>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="container">
+            <div class="news-main-title">
+              <span onclick = "window.location.href = './news.html'">新闻动态</span>  <i class="fa fa-caret-right caret-right" aria-hidden="true"></i> <span onclick = "location.reload()">新闻详情</span>
+                <!-- 首页<i class="fa fa-caret-right caret-right" aria-hidden="true"></i>新闻动态  <i class="fa fa-caret-right caret-right" aria-hidden="true"></i>新闻详情 -->
+            </div>
+            <div class="row">
+                <div class="row news-main-banner">
+                    <img src="./img/news-detail/policy-3.png" alt="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="news-main-title2">
+                    <div class="time">
+                        <p>15</p>
+                        <p>2020/02</p>
+                    </div>
+                    <div class="title-title">
+                        <p>2018中国区块链产业白皮书</p>
+                        <p>浏览次数：1231</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="news-main-text">
+                    <p>2018中国区块链产业高峰论坛上，工信部信息中心发布《2018中国区块链产业白皮书》（简称《白皮书》），深入分析中国区块链技术在金融领域和实体经济的落地应用场景，系统阐述中国区块链产业的发展的六大特点和十大趋势。</p>
+                    <p>区块链技术具备分布式、防篡改、高透明和可追溯的特性，非常符合让整个金融系统业务需求，因此目前已在支付清算、信贷融资、金融交易、证券、保险、租赁等细分领域落地应用。</p>
+                    <p>随着区块链技术创新发展逐步成熟，产业应用的实际效果愈发显现，区块链的应用已从金融领域延伸到实体领域，电子信息存证、版权管理和交易、产品溯源、数字资产交易、物联网、智能制造、供应链管理等领域。实现“协作环节信息化”，助力实体经济降成本提效率</p>
+                    <p>从目前实际的落地案例看，产业区块链技术落地应用要实事求是地为产业解决一些“小问题”，着力于提升产业协作环节的信息化水平，具体可从“降成本”和“提效率”两个方面推动传统产业的发展，发挥“提高产业链协同效率”的作用。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+
+    <!-- 底部固定框 -->
+    <footer class="container-fluid footer-block">
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：010 5150 3423</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：sunch@nercita.org.cn</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html> 

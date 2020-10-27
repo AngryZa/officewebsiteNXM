@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+    <meta name="viewport" content="initial-scale=0.195, maximum-scale=0.5, minimum-scale=0.1, user-scalable=yes">
+    <!-- <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes"> -->
+    <!-- <title>Document</title> -->
+    <title>登录-农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <style>
+        .login-header{
+            height: 130px;
+        }
+        .login-header img{
+            width: 211px;
+            height: 81px;
+            margin-top: 49px;
+            margin-left: 41px;
+        }
+        .login-msg{
+            /* border: 1px solid black; */
+            /* height: 400px; */
+            /* font-size: 24px; */
+            font-size: 20px;
+            font-weight: 400;
+            color: #9A9A9A;
+            line-height: 30px;
+            margin-top: 57px;
+        }
+        .login-msg-box{
+            /* width: 1000px; */
+            width: 625px;
+            /* height: 699px; */
+            height: 500px;
+            background: #FFFFFF;
+            box-shadow: 1px 15px 49px 0px rgba(223, 223, 223, 0.63);
+            margin: 0 auto;
+            padding-top: 18px;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .login-input{
+            width: 400px;
+            /* height: 82px; */
+            height: 42px;
+            background: #FFFFFF;
+            border: 2px solid #E7E7E7;
+            outline: none;
+        }
+        
+        .rows{
+            
+            margin-top: 50px;
+        }
+        .rows input{
+        width: 400px;
+        display: block;
+        margin: 0 auto;
+        }
+        .login-msg-title{
+            /* font-size: 36px; */
+            font-size: 30px;
+            text-align: center;
+            color: #343434;
+            font-weight: 400;
+            line-height: 56px;
+            /* margin-top: 47px; */
+            margin-top: 27px;
+        }
+        .login-choice{
+            /* background: red; */
+            width: 400px;
+            height: 30px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 19px;
+            font-size: 16px;
+            color: #9A9A9A;
+            line-height: 30px;
+        }
+       
+        .login-choice-a:hover{
+            color: #5088F8;
+        }
+        .login-choice-b:hover{
+            color: #5088F8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="position: relative;">
+        <!-- <div class="container login-header" style="width: 1648px!important;margin: 0 auto;" > -->
+        <div class="container login-header" style="margin: 0 auto;" >
+        <!-- <div class="container login-header"  > -->
+            <img src="./img/login/login-logo.png"  style="cursor:pointer;" onclick = "window.location.href = './index.html'" alt="">    
+        </div>
+
+        <!-- 注册栏 -->
+        <div class="container login-msg">
+            <div class="login-msg-box">
+                <div class="row login-msg-title" >
+                    欢迎登录农信码
+                </div>
+                <div class="rows">
+                        <input  class="login-input" type="text" style="text-indent:28px;"  placeholder="请输入账号/用户名">
+                </div>
+                <div class="rows">
+                    <input  class="login-input" type="text" style="text-indent:28px;" placeholder="请输入密码">
+                </div>
+                <div class="row">
+                    <div class="login-choice">
+                        <span class="login-choice-a" style="cursor: pointer; float: left;" onclick = "window.location.href = './retrieve.html'">忘记密码</span>
+                        <span class="login-choice-b" style="cursor: pointer; float: right;"onclick = "window.location.href = './register.html'" >注册账号</span>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 46px;">
+                    <div style="cursor: pointer; width: 160px;margin: 0 auto;height: 49px;background: #5088F8; color: #FFFFFF;line-height: 49px; box-shadow: 1px 23px 59px 0px rgba(77, 136, 255, 0.84);">登录</div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <div class="container-fluid" style="width: 1030px!important; background: url('./img/login/login-bg.png') center center; height:307px!important; left:calc(50% - 824px);bottom: 100px;  position: absolute;z-index: -100; border: 1px dashed black;"> -->
+        <!-- <div class="container-fluid" style="width: 1200px!important; background: url('./img/login/login-bg.png') center center; height:307px!important; left:calc(50% - 600px);bottom: -100px;  position: absolute;z-index: -100; "> -->
+        <div class="container-fluid" style="width: 1600px!important; background: url('./img/login/login-bg.png') center center; height:307px!important; left:calc(50% - 841px);bottom: -100px;  position: absolute;z-index: -100; ">
+
+        </div>
+
+
+        <!-- 底部固定框 -->
+    <!-- <footer class="container-fluid footer-block" style="margin-top: 112px;"  >
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：4000116555转8510</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：qualink@inspur.com</span>
+                </div>
+        </div>
+    </footer> -->
+    </div>
+</body>
+</html>

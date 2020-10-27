@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes">
+    
+    <title>农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <style>
+        .chosen{
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 4px;
+        }
+        .header-bg{
+            background: url('./img/contact/bg.png') no-repeat center center;
+            height: 707px;
+            /* background-position: left -2px */
+        }
+        
+
+        .main-company-introduction{
+            margin-top: 68px;
+            
+        }
+
+        .main-company-introduction-box{
+            width: 1036px;
+            border-bottom:1px solid #E2E2E2 ;
+        }
+        .main-company-introduction img{
+           /*  border-top: 1px dashed black;
+            border-right: 1px dashed black;
+            border-bottom: 1px dashed black; */
+            margin-bottom: 12PX;
+        }
+
+        .main-row2-text{
+            width: 1109px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #A5A5A5;
+            line-height: 30px;
+            margin-top: 37px;
+        }
+        .main-row2-bg{
+            width: 1200px;
+            /* height: 372px;    */
+            background: #E2E2E2;
+            margin-top: 38px;
+        }
+        .main-row2-bg  img{
+            width: 100%;
+        }
+        .main-row4{
+            margin-top:56px ;
+            margin-bottom: 107px;
+        }
+        .main-row4-text{
+            display: inline-block;
+            font-weight: 400;
+            color: #343434;
+            font-size: 24px;
+            line-height: 56px;
+        }
+        .main-row4-img1{
+            width: 41px; height: 41px;margin-right: 44px;
+            /* border: 1px dashed black;   */
+        }
+        .main-row4-img2{
+            width: 41px; height: 30px; margin-right: 44px; 
+            /* border: 1px dashed black; */
+        }
+
+    </style>
+   
+    <script src="./swiper/js/swiper.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="container-fluid header-bg" >
+            <!-- 通用导航栏 -->
+            <script>
+                function showshadow(){
+                    var obg=document.getElementById("header-top")
+                    // console.log(555)
+                    obg.classList.add("header-focus")
+                    // obg.style.background='black'
+                    
+                }
+                function hideshadow(){
+                    var obg=document.getElementById("header-top")
+                    obg.classList.remove("header-focus")
+                    // obg.style.background='none'
+                }
+                
+            </script>   
+
+            <div class="container-fluid header-top" id="header-top"  onmouseover="showshadow()" onmouseout="hideshadow()" >
+                <div class="container nav-line">
+                    <div class="col-xs-3 nav-height" >
+                        <div style="background: url('./img/index/logo.png'); width: 135px ;height: 52px;">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nav-height">
+                        <ul class="nav-ul" >
+                            <li>
+                                <a href="./index.html" class="">首页</a>
+                                <!-- <span class="chosen">首页</span> -->
+                            </li>
+                            <li>
+                                <a  href="./credit-service.html">农信服务</a>
+                                <!-- <span>农信服务</span> -->
+                            </li>
+                            <!-- <li onmouseover="myClickshow()" onmouseout="myClickhide()"  style="position: relative;"  id="gogogo" > -->
+                            <li  style="position: relative;"  id="gogogo" >
+                                <a href="./news.html">新闻动态</a>
+
+                                <ul  style="    top: 102px; position: absolute; height: auto; background: rgba(0,0,0,0.9);">
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoice">
+                                        <a href="./enterprise-join.html">企业加盟</a> </li>
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoices">
+                                        <a href="./news.html">新闻动态</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <script >
+                                function myClickshow(){ 
+                                var oLi=document.querySelector('#gogogo')
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // oLi.style.height="100px";
+                                event.style.display="block";
+                                events.style.display="block";
+                            }
+                                function myClickhide(){
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // console.log(111)
+                                event.style.display="none";
+                                events.style.display="none";
+                            }
+                            </script>
+                            <!-- <li>
+                                <a href="#">公共服务</a>
+                                
+                            </li> -->
+                            <li>
+                                <a href="#" class="chosen">联系我们</a>
+                                <!-- <span>联系我们</span> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 nav-height">
+                        <div class="col-xs-6 col-xs-offset-6 nav-height">
+                            <ul class="nav-loggin">
+                                <li>
+                                    <a href="login.html">登录</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">注册</a>
+                                </li>
+                            </ul>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            
+            <!-- 公司简介 -->
+            <div class="main-company-introduction">
+                <div class="main-company-introduction-box">
+                    <img src="./img/contact/Company introduction.png" alt="">
+                </div>
+            </div>
+            <div class="main-row2">
+                <div class="main-row2-text">   
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国家农业信息化工程技术研究中心（NERCITA）是于2001年由国家科技部批准组建，专门从事农业及农村信息化工程技术研究开发的国家级科研机构。中心的主要任务是针对我国农业和农村信息化建设的重大需求，重点围绕农业智能信息处理技术、农业遥感技术与地理信息系统、精准农业与智能装备技术、农业生物环境控制工程与自动化技术、食品质量安全与物流技术等五大方向，进行源头技术创新、技术平台构建和重大产品研发，为我国农业现代化和新农村建设提供有力的技术支撑。</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;技术团队核心成员74人，由多学科人员组成，涉及农业信息、农业机械、农产品储藏与加工、农产品物流、食品科学、电子信息、计算机应用技术等。团队人员既包括科研经验丰富的研究人员，也包括工程经验丰富的工程师，其中，具有博士学位的人员46人，高级职称人员44人。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中心科技成果已在全国30个省市得到示范应用，建立成果转化基地100多个，部分科技成果还推广到越南等东南亚国家。形成了集成覆盖产品编码与标识、信息采集与决策、产地监测与产品检测、质量安全风险评估与预警等的完整追溯技术体系。<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中心先后承担国家863计划、国家科技支撑计划等科研项目7项；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;获得国家级奖项2项、省部级奖项8项；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已取得标准25项，其中国际标准5项、国家标准12项、行业标准4项；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已授权专利125项，其中发明专利43项、实用新型专利80项；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已发表论文122篇，其中SCI/EI论文114篇；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已获得软件著作权登记126项；<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;已出版专著1部。<br/>
+                </div>
+                <div class="main-row2-bg">
+                    <img src="./img/contact/company-img1.png" alt="">
+                </div>
+            </div>
+
+            <!-- 联系方式 -->
+            <div class="main-company-introduction">
+                <div class="main-company-introduction-box">
+                    <img src="./img/contact/contact information.png" alt="">
+                </div>
+            </div>
+            <div class="main-row4">
+                <div style="display: flex;">
+                     <div style="display: inline-block;">
+                        <img  class="main-row4-img1" src="./img/contact/phone.png" alt="">
+                     </div>
+                    <div class="main-row4-text">
+                        <p>电话咨询</p>
+                        <p>010 5150 3423</p>
+                        <p>传　　真</p>
+                        <p>010 5150 3750</p>
+                    </div>
+                </div>               
+                <div style="display: flex; margin-top: 32px;">
+                        <img class="main-row4-img2" src="./img/contact/email.png" alt="">
+                    <div class="main-row4-text">
+                        <p>服务与支持</p>
+                        <p>电子邮箱： sunch@nercita.org.cn</p>
+                        <p>网址&nbsp;&nbsp;：http://www.nercita.org.cn</p>
+                        <p>邮政编码： 100097</p>
+                        <p>地址： 北京市海淀区曙光花园中路11号</p>
+                    </div>
+                </div>               
+            </div>
+        </div>
+    </main>
+   
+
+    <!-- 底部固定框 -->
+    <footer class="container-fluid footer-block">
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：010  5150  3423</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：sunch@nercita.org.cn</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html>

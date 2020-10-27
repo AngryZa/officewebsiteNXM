@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0 ,minimum-scale=0.2,"> -->
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5 , minimum-scale=0.25, user-scalable=yes">
+    <!-- <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes"> -->
+    <title>农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <style>
+        .chosen{
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 4px;
+        }
+        .header-bg{
+            background: url('./img/index/bg.png')   center center;
+            height: 794px;
+        }
+
+        .header-title{
+            font-size: 46px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 70px;
+            /* margin-top: 154px; */
+            text-shadow: 0px 3px 0px rgba(13, 5, 89, 0.35);
+            color: #FFFFFF; 
+        }
+        .header-lt-title{
+            margin-top: 5px;
+            font-size: 16px;
+            text-align: center;
+            /* font-weight: bold; */
+            line-height: 70px;
+            color: #FFFFFF; 
+        }
+        .header-input{
+            color: white;
+            /* display: flex; */
+            margin-top: 29px;
+        }
+        .header-search{
+            width: 464px;
+            margin: 0 auto;
+            
+        }
+        .header-search-block{
+            display: inline-block;
+            width: 464px;
+            background: #FFFFFF;
+        }
+        .header-search-block i{
+            color: #CACACA;
+            width: 40px;
+            /* margin-right: 5px; */
+                /* margin-left: 5px; */
+                text-align: center;
+                float: left;
+                height: 44px;
+                line-height: 44px;
+        }   
+        .input-off{
+            width: 350px  !important;
+            height: 44px;
+            outline: none;
+            width: auto;
+            border: none;
+            color: #999999;
+            float: left;
+        }
+        .header-search-button{
+            display: inline-block;
+            width: 74px !important;
+            background-color: #49C684;
+            font-size: 14px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            float: left;
+        }
+
+        
+        .main-news{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: #595959;
+            line-height: 70px;
+            padding-top: 41px;
+            padding-bottom: 28px;
+        }
+        .main-news-ul li{
+            display: flex;
+            border-bottom: 1px solid #E0E0E0;
+            padding-top: 18px;
+        } 
+        .main-news-ul li:nth-child(1){
+            padding-top: 0;
+        }
+        .main-news-time{
+            width: 86px;
+            margin-right: 32px;
+        }
+        .main-news-time p:nth-child(1){
+            color: #B8B8B8;
+            font-size: 42px;
+            /* text-align: center; */
+            line-height: 68px;
+        }
+        .main-news-time p:nth-child(2){
+            color: #B8B8B8;
+            font-size: 14px;
+            /* line-height: 40px; */
+            /* text-align: center; */
+        }
+        .main-news-msg{
+            width: 600;
+            /* position: relative; */
+        }
+        .main-news-msg p:nth-child(1){
+            font-size: 20px;
+            line-height: 32px;
+            /* font-weight: bold; */
+            color: #343434;
+        }
+        .main-news-msg-line2{
+            margin-top: 14px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 21px;
+            color: #666666;
+            position: relative;
+            display: block;
+            margin-bottom: 14px;
+        }
+        .main-news-details{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #6B9EEA;
+            cursor: pointer;
+        }
+        .main-news-getmore{
+            margin-top: 56px;
+            text-align: center;
+            color: #999999;
+            font-size: 14px;
+            line-height: 21px;
+            font-weight: bold;
+            padding-bottom: 87px;
+           
+        }
+        .main-news-getmore span{
+            cursor: pointer;
+        }
+        .swiper1 .swiper1-pagination{
+            /* border: 1px solid black; */
+            text-align: right;
+            /* background: #000000; */
+            /* opacity: 0.72; */
+            height: 50px;
+            bottom: 0;
+        }
+        .swiper1 .swiper-pagination-bullets{
+            padding-top: 15px;
+            padding-right: 15px;
+        }
+        .swiper1 .swiper-pagination-bullet{
+            /* padding-top: 10px; */
+            background: #F5F5F5;
+            /* padding-top: 10px; */
+        }
+        .swiper1 .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #007aff;
+        }
+        .swiper1{
+            width: 488px;
+            height: 288px;
+            /* border: 15px solid #F5F5F5; */
+        }
+        .swiper1 .swiper1-silde{
+            /* position: absolute; */
+            /* z-index: 80; */
+        }
+        .swiper1 .swiper1-silde div{
+            /* position: absolute; */
+            left: 22px;
+            bottom: 9px;
+            font-size: 14px;
+            color: #FFFFFF;
+            font-weight: bold;
+            line-height: 32px;
+            /* z-index: 100!important; */
+        }
+        .swiper-text{
+            position: absolute;
+            left: 22px;
+            bottom: 13px;
+            z-index: 999;
+            color: #FFFFFF;
+        }
+        .swiper-slide .gotopss{
+            color: #FFFFFF;
+            background: #000000;
+            opacity: 0.8;
+            position: absolute;
+            width: 100%;
+            height: 50PX;
+            left: 0!important;
+            bottom: 0 !important;
+            z-index: 999!important;
+            font-size: 14px;
+            color: #FFFFFF;
+            line-height: 50px !important;
+            padding-left: 22px;
+        }
+
+
+
+
+        .main-msg-right{
+            width: 488px;
+            
+            
+        }
+        .main-msg-right img{
+            /* border: 1px dashed black; */
+            width: 488px;
+            height: 404px;
+            /* margin-bottom: 2px; */
+        }
+        .main-msg-title span{
+            display: inline-block;
+            font-size: 30px;
+            color: #595959;
+            font-weight: bold;
+            line-height: 57px;
+            border-bottom:4px solid #58BC88 ;
+            margin-top: 9px;
+        }
+        .main-msg-text span{
+            margin-top: 31px;
+            display: inline-block;
+            width: 672px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 32px;
+            color: #595959;
+        }
+
+        /* 我们的服务 */
+        .main-service-title{
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 70px;
+            color: #595959;
+            text-align: center;
+            margin-top: 108px;
+        }
+        .main-service-text{
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 32px;
+            color: #595959;
+            width: 860px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .main-service-pagi{
+            display: flex;
+            justify-content: center;
+            margin-top: 45px;
+        }
+        .main-service-pagi li{
+            display: inline-block;
+            width: 166px;
+            height: 48px;
+            background: #E6E6E6;
+            text-align: center;
+            line-height: 48px;
+            font-size: 16px;
+            color: #666666;
+            font-weight: bold;
+            margin-right: 31px;
+            position: relative;
+        }
+        .msp-active{
+            background: #49C684 !important;
+            color: #FFFFFF !important;
+        }
+        .msp-active span{
+            /* position: absolute;
+            background: #49C684 ;
+            width: 8px;
+            height: 8px; */
+
+
+            border-top: 6px solid #49C684;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: 74px;
+            bottom: -6px;
+        }
+
+        .pagi-right{
+            margin-top: 10px;
+        }
+
+        .pagi-right img{
+            width: 488px;
+            height: 330px;
+        }
+        .pagi-choice{
+            margin-top: 38px;
+        }
+        .pagi-left-title{
+            font-size: 16px;
+            color: #595959;
+            line-height: 32px;
+            font-weight: 400;
+            width: 640px;
+            margin-bottom: 29px;
+        }
+        .pagi-left-ul{
+            color:#ddd;
+        }
+        .pagi-left-ul li{
+            font-size: 16px;
+            font-weight: bold;
+            color: #9A9A9A;
+            line-height: 28px;
+            width: 640px;
+            margin-bottom: 40px;
+            /* list-style: disc inside; */
+        }
+        .pagi-left-ul-circle{
+            display: inline-block;
+        line-height: 28px;
+        width: 7px;
+        height: 7px;
+        background: #4AC864;
+        border-radius: 50%;
+        /* margin-bottom: 2px; */   
+        margin: 0 5px 2px 5px;
+        }
+
+        /* 我们的优势 */
+        .advantage{
+            font-size: 30px;
+            font-weight: bold;
+            color: #595959;
+            line-height: 70px;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .advantage-data{
+            /* width: 100%; */
+            height: 470px;
+            background-size: cover;  
+            /* background: url(./img/index/data-bg.png)  center center; */
+            position: relative;
+        }
+        .advantage-p{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 136px;
+            color: #FFFFFF;
+            font-size: 24px;
+            line-height: 70px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .avdantage-logo{
+            position: absolute;
+            left: 50%;
+            top: 67px;
+            margin-left: -30px;
+        }
+        .advantage-p2{
+           
+            color: #FFFFFF;
+            width: 67%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 16px;
+            line-height: 32px;
+            font-weight: 400;
+        }
+        .advantage-para{
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 211px;
+        }
+
+        /* 企业加盟 */
+         .company-join{
+            text-align: center;   
+            font-size: 30px;
+            line-height: 70px;
+            font-weight: bold;
+            color: #5A5A5A;
+            margin-top: 72px;
+        }
+        .company-join-pagi{
+            width: 100%;
+            /* height: 300px; */
+            margin-top: 32px;
+            margin-bottom: 105px;
+        }
+        .company-join-slide{
+            background: #707070;
+            /* width: 293px !important; */
+            height: 117px;
+            margin-top: 18px;
+        }
+        .company-join-slide img{
+           width: 100%;
+            height: 100%;
+            border: 1px solid black;
+        }
+        .swiper-button-prev{
+            position: absolute;
+            left: -81px;
+            /* cursor: none;  */
+        }
+        .swiper-button-next{
+            position: absolute;
+            right: -81px;
+            /* cursor: none;  */
+        }
+        .swiper-button-prev:focus {
+           outline: none;
+        }
+        .swiper-button-next:focus{
+            outline: none;
+        }
+
+
+
+
+
+        /* 背景球1 */
+        .circle-green{
+            width: 199px;
+            height: 199px;
+            /* background: #58BC87; */
+
+            background-image: linear-gradient(180deg,transparent,#58BC88);
+            opacity: 0.14;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -150px;
+            left: 287px;
+        }
+        .circle-green2{
+            width: 199px;
+            height: 196px;
+            /* background: #58BC87; */
+
+            background-image: linear-gradient(0deg,transparent,#58BC88);
+            opacity: 0.14;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -140px;
+            left: 0;
+        }
+        .circle-green3{
+            width: 106px;
+            height: 106px;
+            /* background: #58BC87; */
+            z-index: 10;
+            background-image: linear-gradient(180deg,transparent,#58BC88);
+            opacity: 0.14;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+        }
+
+        canvas {
+  position: relative;
+  width: 100%;
+  height:1000px;
+  top:0px;
+
+}
+    </style>
+   
+    <script src="./swiper/js/swiper.min.js"></script>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <script src="./js/particlesJS.js"></script>
+</head>
+<body>
+    
+    <header>
+
+        <div class="container-fluid header-bg" style="position: relative; ">
+            <script>
+                jQuery(function($) {
+                particlesJS('particles-js', {
+                    particles: {
+                      color: '#92f5f8',
+                      shape: 'circle',
+                      // "circle", "edge" or "triangle"
+                      opacity: .4,
+                      size: 4,
+                      size_random: true,
+                    //   nb: 110,
+                      nb: 110,
+                      line_linked: {
+                        enable_auto: true,
+                        distance: 120,
+                        color: '#2064b3',
+                        opacity: 0.7,
+                        width: 1,
+                        condensed_mode: {
+                          enable: false,
+                          rotateX: 600,
+                          rotateY: 600
+                        }
+                      },
+                      anim: {
+                        enable: true,
+                        speed: 1
+                      }
+                    },
+                    interactivity: {
+                      enable: true,
+                      mouse: {
+                        distance: 300
+                      },
+                      detect_on: 'canvas',
+                      // "canvas" or "window"
+                      mode: 'grab',
+                      line_linked: {
+                        opacity: .5
+                      },
+                      events: {
+                        onclick: {
+                          enable: true,
+                          mode: 'push',
+                          // "push" or "remove"
+                          nb: 4
+                        }
+                      }
+                    },
+                    /* Retina Display Support */
+                    retina_detect: true
+                  });
+                });	
+                </script>
+            <!-- <div id="particles-js" style="position:absolute;height:794px;width:100%;background:#0e0659;overflow:hidden"><canvas width="1903" height="1000" style="width: 100%; height: 100%;"></canvas></div> -->
+            <div id="particles-js" style="position:absolute;z-index: 0; height:794px;width:100%;overflow:hidden"><canvas style="width: 100%; height: 100%;"></canvas></div>
+            <!-- 通用导航栏 -->
+            <script>
+                function showshadow(){
+                    var obg=document.getElementById("header-top")
+                    // console.log(555)
+                    obg.classList.add("header-focus")
+                    // obg.style.background='black'
+                    
+                }
+                function hideshadow(){
+                    var obg=document.getElementById("header-top")
+                    obg.classList.remove("header-focus")
+                    // obg.style.background='none'
+                }
+                
+            </script>   
+            <div class="container-fluid header-top" id="header-top"  onmouseover="showshadow()" onmouseout="hideshadow()" >
+                <div class="container nav-line">
+                    <div class="col-xs-3 nav-height" >
+                        <div style="background: url('./img/index/logo.png'); width: 135px ;height: 52px;">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nav-height">
+                        <ul class="nav-ul" >
+                            <li>
+                                <a href="index.html" class="chosen">首页</a>
+                                <!-- <span class="chosen">首页</span> -->
+                            </li>
+                            <li>
+                                <a href="./credit-service.html">农信服务</a>
+                                <!-- <span>农信服务</span> -->
+                            </li>
+                            <!-- <li onmouseover="myClickshow()" onmouseout="myClickhide()"  style="position: relative;"  id="gogogo" > -->
+                            <li   style="position: relative;"  id="gogogo" >
+                                <a href="./news.html">新闻动态</a>
+                                
+                                <ul  style="top:102px; position: absolute; height: auto; background: rgba(0,0,0,0.9);">
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoice">
+                                        <a href="./enterprise-join.html">企业加盟</a> </li>
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoices">
+                                        <a href="./news.html">新闻动态</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <script >
+                                function myClickshow(){ 
+                                var oLi=document.querySelector('#gogogo')
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // oLi.style.height="100px";
+                                event.style.display="block";
+                                events.style.display="block";
+                            }
+                                function myClickhide(){
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // console.log(111)
+                                event.style.display="none";
+                                events.style.display="none";
+                            }
+                            </script>
+
+
+
+
+                           <!--  <li>
+                                <a href="#">公共服务</a>
+                                
+                            </li> -->
+                            <li>
+                                <a href="./contact.html">联系我们</a>
+                                <!-- <span>联系我们</span> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 nav-height">
+                        <div class="col-xs-6 col-xs-offset-6 nav-height">
+                            <ul class="nav-loggin">
+                                <li>
+                                    <a href="login.html">登录</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">注册</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+    
+            <!-- 主页头部内容区 -->
+            <div class="container" style="position: absolute;z-index: 10;top: 260px;left: calc( 50% - 600px);">
+                <div class="row header-title">农信码，构建农业价值连接器</div>
+                <div class="row header-lt-title">农信码致力于为政府、行业、企业提供基于农业供应链的区块链联盟网络服务</div>
+                <div class="row header-input" >
+                        <div class="header-search">
+                            <form action="/news.newssearchsolr.dhtml" target="_blank" method="get" >
+                                <div class="header-search-block" >
+                                    <i class="fa fa-search"></i>
+                                    <input  class="input-off" type="text" placeholder="产品/企业/关键字...">
+                                    <span class="header-search-button">搜索</span>
+                                </div>
+                                
+                                
+                            </form>
+                        </div>
+                        
+                    
+                    
+                </div>
+                
+            </div>
+        </div>
+    </header>
+    
+
+
+    <main>
+        <!-- 资讯动态 -->
+        <div class="container">
+            <div class="row main-news">
+                资讯动态
+            </div>
+            <div class="row" style="position: relative;">
+                <!-- 左侧信息ul -->
+                <div class="col-xs-6">
+                    <ul class="main-news-ul">
+                        <li >
+                            <div class="main-news-time"> 
+                                <p>17</p>
+                                <p>2020/11</p>
+                            </div>
+                            <div class="main-news-msg">
+                                <p>第三届中国产业区块链峰食品追溯相关区块链标准发布</p>
+    
+                                <div class="main-news-msg-line2">本报讯 8月27日，第三届中国产业区块链峰会在长沙成功召开。本次会议由中国物流与采
+                                    购联合会指导，中国物流与采购联合会区块链应用分会主办...
+                                    <div class="main-news-details"  onclick = "window.location.href = './news.html'">查看详情>></div>
+                                </div>
+    
+                            </div>
+                        </li>
+                        <li >
+                            <div class="main-news-time"> 
+                                <p>17</p>
+                                <p>2020/11</p>
+                            </div>
+                            <div class="main-news-msg">
+                                <p>第三届中国产业区块链峰食品追溯相关区块链标准发布</p>
+    
+                                <div class="main-news-msg-line2">本报讯 8月27日，第三届中国产业区块链峰会在长沙成功召开。本次会议由中国物流与采
+                                    购联合会指导，中国物流与采购联合会区块链应用分会主办...
+                                    <div class="main-news-details" onclick = "window.location.href = './news.html'">查看详情>></div>
+                                </div>
+    
+                            </div>
+                        </li>
+                        <li style="background-color: #FFFFFF;" >
+                            <div class="main-news-time"> 
+                                <p>17</p>
+                                <p>2020/11</p>
+                            </div>
+                            <div class="main-news-msg">
+                                <p>第三届中国产业区块链峰食品追溯相关区块链标准发布</p>
+    
+                                <div class="main-news-msg-line2">本报讯 8月27日，第三届中国产业区块链峰会在长沙成功召开。本次会议由中国物流与采
+                                    购联合会指导，中国物流与采购联合会区块链应用分会主办...
+                                    <div class="main-news-details" onclick = "window.location.href = './news.html'">查看详情>></div>
+                                </div>
+    
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- 右侧swiper -->
+                <div class="col-xs-6">
+                    <div style="    border: 15px solid #F5F5F5;
+                    width: 518px;
+                    height: 318px;
+                    margin-left: 25px;
+                ">
+                        <div class="swiper-container swiper1" id="swiper_container">
+                            <div class="swiper-wrapper swiper1">
+                              <div class="swiper-slide swiper1-silde" onclick = "window.location.href = './news-detail-1.html'">
+                                  <img  style="width: 100%;height: 100%;" src="./img/news/news-img1.png" alt="">
+                                  <div class="gotopss">斯莱克：阿里系科技赋能，区块链防伪溯源  </div>
+                                </div>
+                              <div class="swiper-slide swiper1-silde" onclick = "window.location.href = './news-detail-2.html'">
+                                  <img  style="width: 100%;height: 100%;" src="./img/news/news-img2.png" alt="">
+                                  <div class="gotopss">解构京东数科区块链：孵化于供应链溯源场景，背靠京东零售和物流  </div>
+                                </div>
+                              <div class="swiper-slide swiper1-silde" onclick = "window.location.href = './news-detail-3.html'">
+                                  <img  style="width: 100%;height: 100%;" src="./img/news/news-img3.png" alt="">
+                                  <div class="gotopss">区块链防伪溯源让你明明白白吃个蟹  </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper1-pagination">
+                            </div>
+                          </div>
+                    </div>
+                    </div>
+                    
+                <script>
+                    window.onload=function(){
+
+                        var mySwiper = new Swiper('#swiper_container', {
+                            autoplay: true,//可选选项，自动滑动
+                            paginationClickable: true,
+                            pagination: {
+                            el: 
+                            '.swiper-pagination',
+                            clickable :true,
+                            }
+                        })
+        
+                    }
+                    
+                </script>
+
+            <div class="circle-green"></div>
+            </div>
+            <div class="row main-news-getmore" >
+                <span onclick = "window.location.href = './news.html'">查看更多资讯>></span> 
+                
+            </div>
+        </div>
+
+
+
+        <!-- 农信码介绍 -->
+        <div class="container">
+            <div class="col-xs-7">
+                <div class="row main-msg-title">
+                    <span>农信码介绍</span>  
+                </div>
+                <div class="row main-msg-text">
+                    <span>农信码以区块链为核心支撑技术，高度融合云计算、大数据、人工智能等新一代信息基础设施，全力打造第三方农产品质量信息公共服务平台和质量提升支撑服务体系，同时也是工业互联网一物一码标识服务的基础和底层支持。</br>
+                        农信码同时突破区块链数据标识技术、跨链技术、监管技术、开发模块组件快速建链和跨链互联等难题，建立面向农产品追溯领域的区块链支撑服务平台，对于实现农业企业快速上链等行为具有重大意义。同时，区块链技术支撑服务平台可以整合供应链资源，实现统一规划、统一标准、统一接口，内外协同，公平透明，打通行业信息壁垒，实现企业共享、交换数据，节约运营、沟通成本，提高效率，最终实现上下协同、价值传递，解决追溯领域的上下游机构高效协同困难的问题，实现农产品供应链领域数据价值的可信传递。
+                    </span>
+                    <div class="circle-green2"></div>
+                    <div class="circle-green3"></div>
+                </div>
+            </div>
+            <div class="col-xs-5 main-msg-right">
+                <img src="./img/index/index-showing.png" alt="">
+            </div>
+        </div>
+
+
+        <!-- 我们的服务 -->
+        <div class="container" style="height: 786px;">
+            <div class="row">
+                <p class="main-service-title">我们的服务</p>
+                <p class="main-service-text">打造共建共治共享的农业供应链生态治理新格局，整合供应链资源，打通行业信息壁垒，降低信任成本，提高整理效率，
+                    实现追溯领域的上下游机构高效协同 ，农产品供应链领域数据价值可信传递。</p>
+            </div>
+            <div class="row">
+                <div class="row">
+                    <ul class="main-service-pagi">
+                        <li class="main-service-change zf" id="zf">面向政府 <span></span></li>
+                        <li class="main-service-change msp-active  qy" id="qy">面向企业 <span></span> </li>
+                        <li class="main-service-change xfz" id="xfz">面向消费者 <span></span> </li>
+                    </ul>
+                    <div>
+                        <div class="pagi-choice">
+                            <div class="col-xs-7">
+                                <div id="zf1" class="pagi-left-1 pagi-left" style="display: none;" >
+                                    <div class="pagi-left-title" >面向政府提供区块链质量监管服务，提供动态的可视化方法展现各类节点的网络地址、账户地址和交易信息的情况，方便管理者对一个区块链的参与者进行有效的管理。</div>
+                                    <ul class="pagi-left-ul">
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            使用智能合约加入到监管的规则中，能全面提升监管的自动化水平
+                                            </li>
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            支持穿透式监管；容易标准化监管的接口，实现集中式监管</li>
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            动态可视化区块链监管操作便捷，降低技术门槛，利于推广</li>
+                                    </ul>
+                                </div>
+                                <div id="qy1" class="pagi-left-2 pagi-left" style="display: none;">
+                                    <div class="pagi-left-title" id="pagi-left-title">面向企业提供区块链供应链全程追溯服务，打通行业信息壁垒，达到企业共享、置换数据、
+                                        节约运营、沟通成本，提高效率，最终实现上下协同，价值传递，解决追溯领域的上下游机
+                                        构高效协同，实现农产品供应链领域数据价值可信传递。</div>
+                                    <ul class="pagi-left-ul">
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            快速组网建链技术，开发全自动化区块链平台，实现一键部署，大幅减少在区块链部署、
+                                            运维、管理、应用开发等方面的难度，降低区块链服务门槛</li>
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            数据管控和协同技术对资源和数据管控与协作，有效整合平台数据资源，为跨生态、跨行
+                                            业的区块链业务</li>
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            链跨链技术解决追溯行业跨生态、跨行业的多维协作解决信息孤岛问题，从追溯异构链
+                                            “孤岛”发展成为异构链“网络”。</li>
+                                    </ul>
+                                </div>
+                                <div id="xfz1" class="pagi-left-3 pagi-left" style="display: block;">
+                                    <div class="pagi-left-title" id="pagi-left-title"></div>
+                                    <ul class="pagi-left-ul">
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            提供快捷溯源查询服务，实现扫码溯源，信息真实可靠。</li>
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            建立售后服务体验反馈机制，以质量保险等形式保障消费者合法权益</li>
+                                        <li>
+                                            <span class="pagi-left-ul-circle"></span>
+                                            提升信息的透明度和真实性，让信任在追溯平台得以良好的维护。</li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                            <div class="col-xs-5">
+                                <div class="pagi-right">
+                                    <img id="pagi-right-img" src="./img/index/index-pagi.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <script>
+                    var Zf=document.getElementById('zf')
+                    var Zf1=document.getElementById('zf1')
+                    var Qy=document.getElementById('qy')
+                    var Qy1=document.getElementById('qy1')
+                    var Xfz=document.getElementById('xfz')
+                    var Xfz1=document.getElementById('xfz1')
+                    var img=document.getElementById('pagi-right-img')
+                    Zf.onclick=function(){
+                        Zf.classList.add('msp-active')
+                        Qy.classList.remove('msp-active')
+                        Xfz.classList.remove('msp-active')
+                        // console.dir(F1)
+                        // console.dir(Zf)
+                        Zf1.style.display='block'
+                        Qy1.style.display='none'
+                        Xfz1.style.display='none'      
+                        img.src="./img/index/index-zf.jpg"
+                    }
+                    Qy.onclick=function(){
+                        Qy.classList.add('msp-active')
+                        Zf.classList.remove('msp-active')
+                        Xfz.classList.remove('msp-active')
+                        // console.dir(F1)
+                        // console.dir(Zf)
+                        Zf1.style.display='none'
+                        Qy1.style.display='block'
+                        Xfz1.style.display='none'      
+                        img.src="./img/index/index-pagi.png"
+                    }
+                    Xfz.onclick=function(){
+                        Zf.classList.remove('msp-active')
+                        Qy.classList.remove('msp-active')
+                        Xfz.classList.add('msp-active')
+                        // console.dir(F1)
+                        // console.dir(Zf)
+                        Zf1.style.display='none'
+                        Qy1.style.display='none'
+                        Xfz1.style.display='block'  
+                        img.src="./img/index/index-xfz.jpg"    
+                    }
+
+                </script>
+            </div>
+        </div>
+        
+        <!-- 我们的优势 -->
+        <div class="container-fluid">
+            <div class="container advantage">
+                我们的优势
+            </div>
+
+            <div class="col-xs-4 advantage-data">
+                <img style="width: 100%; height: 100%;" src="./img/index/data-bg.png" alt="">
+                <img class="avdantage-logo" src="./img/index/index-data.png" alt="">
+                <p class="advantage-p">
+                    数据可信
+                </p>
+                <div class="row advantage-para" >
+                    <div class="advantage-p2">
+                        企业通过将身份、信息、资产、行为上链，采用分布式账本保存使得存证无法篡改，并由具有公信力的权威节点共同见证，并作为纠纷发生时的电子证据，实现全流程留痕，全链路可信，全节点见证，高效解决企业纠纷，降低企业风控成本，营造互信的商业环境。
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-4 advantage-data">
+                <img style="width: 100%; height: 100%;" src="./img/index/safe-bg.png" alt="">
+                <img class="avdantage-logo" src="./img/index/index-safe.png" alt="">
+                <p class="advantage-p">
+                    隐私安全
+                </p>
+                <div class="row advantage-para" >
+                    <div class="advantage-p2">
+                        隐私安全技术分别着眼于底层硬件环境、智能合约安全和行业协作网络，覆盖了从区块链环境部署到应用网络的完整安全部署，保证数据最小化利用，所有计算均在加密或脱敏之后进行计算，最大程度的保障个人隐私数据安全；再利用加密技术对链上数据进行隐私保护，实现数据有目标共享。
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-4 advantage-data">
+                <img  style="width: 100%; height:470px;" src="./img/index/standard-bg.png" alt="">
+                <img class="avdantage-logo" src="./img/index/index-standard.png" alt="">
+                <p class="advantage-p">
+                    标准第一
+                </p>
+                <div class="row advantage-para" >
+                    <div class="advantage-p2">
+                        联合政府监管部门、标准制定机构、行业龙头企业等制定行业质量标准，并形成智能合约，代码公开透明，行业内企业按标准写入质量数据，进一步实现质量数据的互联互通，助力政府市场监管、提升企业质量管理能力。
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 企业加盟 -->
+
+        <div class="container-fluid">
+            <div class="company-join">企业加盟</div>
+            <div class="container" style="position: relative;">
+                <div class="swiper-container swiper-container2 company-join-pagi">
+                    <div class="swiper-wrapper">
+                        <!-- <div class="swiper-slide">
+                            <div class="company-join-slide"></div>
+                            <div class="company-join-slide"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide"></div>
+                            <div class="company-join-slide"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide"></div>
+                            <div class="company-join-slide"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide"></div>
+                            <div class="company-join-slide"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide"></div>
+                            <div class="company-join-slide"></div>
+                        </div> -->
+                        <div class="swiper-slide">
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>  
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>  
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>  
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>  
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>
+                            <div class="company-join-slide">
+                                <img src="./img/index/company-join1.png" alt="">
+                            </div>  
+                        </div>
+                        
+                        
+                    </div>
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                    
+                    <!-- 如果需要导航按钮 -->
+                    
+                   
+                    <!-- 如果需要滚动条 -->
+                    <!-- <div class="swiper-scrollbar"></div> -->
+                </div>
+                <div class="swiper-button-prev" style="background: url('./img/index/swiper-left.png') no-repeat center center; width: 38px;height: 38px;"></div>
+                <div class="swiper-button-next" style="background: url('./img/index/swiper-right.png') no-repeat center center; width: 38px;height: 38px;"></div>
+            </div>
+            <script>
+                var mySwiper = new Swiper ('.swiper-container2', {
+                    loop: true, // 循环模式选项
+                    // 如果需要前进后退按钮
+                    navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                    },
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                    
+                })     
+            </script>
+        </div>
+
+    </main>
+
+    
+
+
+
+
+    <!-- 底部固定框 -->
+    <footer class="container-fluid footer-block">
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：010 5150 3423</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：sunch@nercita.org.cn</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html>

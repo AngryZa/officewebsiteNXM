@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes"> -->
+    <meta name="viewport" content="initial-scale=0.195, maximum-scale=0.5, minimum-scale=0.1, user-scalable=yes">
+    <!-- <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes"> -->
+    <title>农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <script src="./js/jquery-3.5.1.min.js"></script>
+    <style> 
+        .chosen{
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 4px;
+        }
+        .header-bg{
+            background: url('./img/credit-service/bg.png') no-repeat center center;
+            height: 467px;
+        }
+
+        .header-title{
+            font-size: 46px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 70px;
+            margin-top: 67px;
+            text-shadow: 0px 3px 0px rgba(13, 5, 89, 0.35);
+            color: #FFFFFF; 
+        }
+        .header-lt-title{
+            margin-top: 30px;
+            font-size: 16px;
+            text-align: center;
+            /* font-weight: bold; */
+            line-height: 34px;
+            color: #FFFFFF; 
+        }
+        .main-list{
+            /* text-align: center; */
+            height: 82px;
+            line-height: 82px;
+            font-size: 20px;
+            color: #666666;
+            font-weight: bold;
+        }
+
+
+
+        /* 我们的服务 */
+        .main-service-title{
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 70px;
+            color: #595959;
+            text-align: center;
+            margin-top: 108px;
+        }
+        .main-service-text{
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 32px;
+            color: #595959;
+            width: 860px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        .main-service-pagi{
+            display: flex;
+            justify-content: center;
+            margin-top: 45px;
+        }
+        .main-service-pagi li{
+            display: inline-block;
+            width: 166px;
+            height: 48px;
+            background: #E6E6E6;
+            text-align: center;
+            line-height: 48px;
+            font-size: 16px;
+            color: #666666;
+            font-weight: bold;
+            margin-right: 31px;
+            position: relative;
+        }
+        .msp-active{
+            background: #49C684 !important;
+            color: #FFFFFF !important;
+        }
+        .msp-active span{
+            /* position: absolute;
+            background: #49C684 ;
+            width: 8px;
+            height: 8px; */
+
+
+            border-top: 6px solid #49C684;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            content: "";
+            display: inline-block;
+            position: absolute;
+            right: 74px;
+            bottom: -6px;
+        }
+
+        .pagi-right{
+            margin-top: 10px;
+        }
+
+        .pagi-right img{
+            width: 488px;
+            height: 330px;
+        }
+        .pagi-choice{
+            margin-top: 38px;
+        }
+        .pagi-left-title{
+            font-size: 16px;
+            color: #595959;
+            line-height: 32px;
+            font-weight: 400;
+            width: 640px;
+            margin-bottom: 29px;
+        }
+        .pagi-left-ul{
+            color:#ddd;
+        }
+        .pagi-left-ul li{
+            font-size: 16px;
+            font-weight: bold;
+            color: #9A9A9A;
+            line-height: 28px;
+            width: 640px;
+            margin-bottom: 40px;
+            /* list-style: disc inside; */
+        }
+        .pagi-left-ul-circle{
+            display: inline-block;
+        line-height: 28px;
+        width: 7px;
+        height: 7px;
+        background: #3670e7;
+        border-radius: 50%;
+        /* margin-bottom: 2px; */   
+        margin: 0 5px 2px 5px;
+        }
+        .credit-active{
+            color: #3670E7;
+        }
+        .service-detail1,.service-detail2,.service-detail3{
+            margin-bottom: 50px;
+            height: 443px;
+        }
+        .fiex-bar{
+            position: fixed!important;
+            top: 0;
+            left: 0;
+            width: 100%;
+        /* height: 100%; */
+            background: #FFFFFF;
+            z-index: 10;
+            /* border-bottom: 1px solid black; */
+            box-shadow: 0px 10px 20px #888888;
+        }
+    </style>
+    <script src="./swiper/js/swiper.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container-fluid header-bg" >
+            <!-- 通用导航栏 -->
+            <script>
+                function showshadow(){
+                    var obg=document.getElementById("header-top")
+                    // console.log(555)
+                    obg.classList.add("header-focus")
+                    // obg.style.background='black'
+                    
+                }
+                function hideshadow(){
+                    var obg=document.getElementById("header-top")
+                    obg.classList.remove("header-focus")
+                    // obg.style.background='none'
+                }
+                
+            </script>   
+
+            <div class="container-fluid header-top" id="header-top"  onmouseover="showshadow()" onmouseout="hideshadow()" >
+                <div class="container nav-line">
+                    <div class="col-xs-3 nav-height" >
+                        <div style="background: url('./img/index/logo.png'); width: 135px ;height: 52px;">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nav-height">
+                        <ul class="nav-ul" >
+                            <li>
+                                <a href="./index.html" class="">首页</a>
+                                <!-- <span class="chosen">首页</span> -->
+                            </li>
+                            <li>
+                                <a class="chosen" href="./credit-service.html">农信服务</a>
+                                <!-- <span>农信服务</span> -->
+                            </li>
+                            <li onmouseover="myClickshow()" onmouseout="myClickhide()"  style="position: relative;"  id="gogogo" >
+                                <a href="#">新闻动态</a>
+
+                                <ul  style="    top: 102px; position: absolute; height: auto; background: rgba(0,0,0,0.9);">
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoice">
+                                        <a href="./enterprise-join.html">企业加盟</a> </li>
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoices">
+                                        <a href="./news.html">新闻动态</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <script >
+                                function myClickshow(){ 
+                                var oLi=document.querySelector('#gogogo')
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // oLi.style.height="100px";
+                                event.style.display="block";
+                                events.style.display="block";
+                            }
+                                function myClickhide(){
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // console.log(111)
+                                event.style.display="none";
+                                events.style.display="none";
+                            }
+                            </script>
+                            <!-- <li>
+                                <a href="#">公共服务</a>
+                            </li> -->
+                            <li>
+                                <a href="./contact.html">联系我们</a>
+                                <!-- <span>联系我们</span> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 nav-height">
+                        <div class="col-xs-6 col-xs-offset-6 nav-height">
+                            <ul class="nav-loggin">
+                                <li>
+                                    <a href="login.html">登录</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">注册</a>
+                                </li>
+                            </ul>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+
+            <!-- 主页头部内容区 -->
+            <div class="container">
+                <div class="row header-title">企业加盟</div>
+                <div class="row header-lt-title">
+                    <p>企业进行农信认证，并将生产、流通、销售、标准、检测等产品质量数据写入农信码平台，</p>
+                    <p>并通过相关组织机构的信任背书，为消费者构建一个可信任、便捷的产品质量溯源信息查询通道，助力政府质量监管，提升企业品牌形象</p> 
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </header>
+    
+    <div class=" container-fluid" id="fiex-bar">
+        <div class="container" style="width: 1200px!important;">
+
+        
+        <div style="display: flex;">
+            <div id="zf" style=" text-align: center;" class="col-xs-4  main-list  credit-active"> 
+                    <span><img id="zfImg" style="margin-right: 10%;" src="./img/credit-service/gov.png" alt=""></span>
+                    面向政府
+            </div> 
+            <div id="qy" class=" main-list col-xs-4" style="  display: flex; align-items: center; justify-content: center;" > 
+                <p style="border-left: 1px solid #C9C9C9;border-right: 1px solid #C9C9C9;line-height: 23px;width: 100%;text-align: center;">
+                    <span ><img id="qyImg" style="margin-right: 10%" src="./img/credit-service/company.png" alt=""></span>
+                    面向企业
+                </p>
+            </div>
+            <div id="xfz" class=" main-list col-xs-4 " style="text-align: center;"> 
+                    <span><img id="xfzImg" style="margin-right: 10%" src="./img/credit-service/customer.png" alt=""></span>
+                    面向消费者
+            </div>
+        </div>
+    </div>
+    </div>  
+    <main style="background: #F5F5F5;">
+        <!-- <div class="container" style=" width: 1900px!important; background: #FFFFFF;"> -->
+            
+        <div class="container">
+            <!-- <div class="fiex-bar container-fluid">
+                <div style="display: flex;">
+                    <div id="zf" style=" text-align: center;" class="col-xs-4  main-list  credit-active"> 
+                            <span><img style="margin-right: 10%;" src="./img/credit-service/gov.png" alt=""></span>
+                            面向政府
+                    </div> 
+                    <div id="qy" class=" main-list col-xs-4" style="  display: flex; align-items: center; justify-content: center;" > 
+                        <p style="border-left: 1px solid #C9C9C9;border-right: 1px solid #C9C9C9;line-height: 23px;width: 100%;text-align: center;">
+                            <span ><img style="margin-right: 10%" src="./img/credit-service/company.png" alt=""></span>
+                            面向企业
+                        </p>
+                    </div>
+                    <div id="xfz" class=" main-list col-xs-4 " style="text-align: center;"> 
+                            <span><img style="margin-right: 10%" src="./img/credit-service/customer.png" alt=""></span>
+                            面向消费者
+                    </div>
+                </div>
+            </div>   -->
+
+
+            <div class="service-detail1" id="service-detail1">
+                <div>
+                    <div class="pagi-choice container">
+                        <div class="col-xs-7">
+                            <div id="zf1" class="pagi-left-1 pagi-left" style="display:block;" >
+                                <div class="pagi-left-title" >面向政府提供区块链质量监管服务，提供动态的可视化方法展现各类节点的网络地址、账户地址和交易信息的情况，方便管理者对一个区块链的参与者进行有效的管理。</div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        使用智能合约加入到监管的规则中，能全面提升监管的自动化水平
+                                        </li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        支持穿透式监管；容易标准化监管的接口，实现集中式监管</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        动态可视化区块链监管操作便捷，降低技术门槛，利于推广</li>
+                                </ul>
+                            </div>
+                            <div id="qy1" class="pagi-left-2 pagi-left" style="display: none;">
+                                <div class="pagi-left-title" id="pagi-left-title">面向企业提供区块链供应链全程追溯服务，打通行业信息壁垒，达到企业共享、置换数据、
+                                    节约运营、沟通成本，提高效率，最终实现上下协同，价值传递，解决追溯领域的上下游机
+                                    构高效协同，实现农产品供应链领域数据价值可信传递。</div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        快速组网建链技术，开发全自动化区块链平台，实现一键部署，大幅减少在区块链部署、
+                                        运维、管理、应用开发等方面的难度，降低区块链服务门槛</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        数据管控和协同技术对资源和数据管控与协作，有效整合平台数据资源，为跨生态、跨行
+                                        业的区块链业务</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        链跨链技术解决追溯行业跨生态、跨行业的多维协作解决信息孤岛问题，从追溯异构链
+                                        “孤岛”发展成为异构链“网络”。</li>
+                                </ul>
+                            </div>
+                            <div id="xfz1" class="pagi-left-3 pagi-left" style="display: none;">
+                                <div class="pagi-left-title" id="pagi-left-title"></div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        提供快捷溯源查询服务，实现扫码溯源，信息真实可靠。</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        建立售后服务体验反馈机制，以质量保险等形式保障消费者合法权益</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        提升信息的透明度和真实性，让信任在追溯平台得以良好的维护。</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="pagi-right">
+                                <img id="pagi-right-img" src="#" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="service-detail2" id="service-detail2">
+                <div>
+                    <div class="pagi-choice container">
+                        <div class="col-xs-7">
+                            <div id="zf1" class="pagi-left-1 pagi-left" style="display:none;" >
+                                <div class="pagi-left-title" >面向政府提供区块链质量监管服务，提供动态的可视化方法展现各类节点的网络地址、账户地址和交易信息的情况，方便管理者对一个区块链的参与者进行有效的管理。</div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        使用智能合约加入到监管的规则中，能全面提升监管的自动化水平
+                                        </li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        支持穿透式监管；容易标准化监管的接口，实现集中式监管</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        动态可视化区块链监管操作便捷，降低技术门槛，利于推广</li>
+                                </ul>
+                            </div>
+                            <div id="qy1" class="pagi-left-2 pagi-left" style="display: block;">
+                                <div class="pagi-left-title" id="pagi-left-title">面向企业提供区块链供应链全程追溯服务，打通行业信息壁垒，达到企业共享、置换数据、
+                                    节约运营、沟通成本，提高效率，最终实现上下协同，价值传递，解决追溯领域的上下游机
+                                    构高效协同，实现农产品供应链领域数据价值可信传递。</div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        快速组网建链技术，开发全自动化区块链平台，实现一键部署，大幅减少在区块链部署、
+                                        运维、管理、应用开发等方面的难度，降低区块链服务门槛</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        数据管控和协同技术对资源和数据管控与协作，有效整合平台数据资源，为跨生态、跨行
+                                        业的区块链业务</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        链跨链技术解决追溯行业跨生态、跨行业的多维协作解决信息孤岛问题，从追溯异构链
+                                        “孤岛”发展成为异构链“网络”。</li>
+                                </ul>
+                            </div>
+                            <div id="xfz1" class="pagi-left-3 pagi-left" style="display: none;">
+                                <div class="pagi-left-title" id="pagi-left-title"></div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        提供快捷溯源查询服务，实现扫码溯源，信息真实可靠。</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        建立售后服务体验反馈机制，以质量保险等形式保障消费者合法权益</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        提升信息的透明度和真实性，让信任在追溯平台得以良好的维护。</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="pagi-right">
+                                <img id="pagi-right-img" src="#" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="service-detail3" id="service-detail3">
+                <div>
+                    <div class="pagi-choice container">
+                        <div class="col-xs-7">
+                            <div id="zf1" class="pagi-left-1 pagi-left" style="display:none;" >
+                                <div class="pagi-left-title" >面向政府提供区块链质量监管服务，提供动态的可视化方法展现各类节点的网络地址、账户地址和交易信息的情况，方便管理者对一个区块链的参与者进行有效的管理。</div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        使用智能合约加入到监管的规则中，能全面提升监管的自动化水平
+                                        </li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        支持穿透式监管；容易标准化监管的接口，实现集中式监管</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        动态可视化区块链监管操作便捷，降低技术门槛，利于推广</li>
+                                </ul>
+                            </div>
+                            <div id="qy1" class="pagi-left-2 pagi-left" style="display: none;">
+                                <div class="pagi-left-title" id="pagi-left-title">面向企业提供区块链供应链全程追溯服务，打通行业信息壁垒，达到企业共享、置换数据、
+                                    节约运营、沟通成本，提高效率，最终实现上下协同，价值传递，解决追溯领域的上下游机
+                                    构高效协同，实现农产品供应链领域数据价值可信传递。</div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        快速组网建链技术，开发全自动化区块链平台，实现一键部署，大幅减少在区块链部署、
+                                        运维、管理、应用开发等方面的难度，降低区块链服务门槛</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        数据管控和协同技术对资源和数据管控与协作，有效整合平台数据资源，为跨生态、跨行
+                                        业的区块链业务</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        链跨链技术解决追溯行业跨生态、跨行业的多维协作解决信息孤岛问题，从追溯异构链
+                                        “孤岛”发展成为异构链“网络”。</li>
+                                </ul>
+                            </div>
+                            <div id="xfz1" class="pagi-left-3 pagi-left" style="display: block;">
+                                <div class="pagi-left-title" id="pagi-left-title"></div>
+                                <ul class="pagi-left-ul">
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        提供快捷溯源查询服务，实现扫码溯源，信息真实可靠。</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        建立售后服务体验反馈机制，以质量保险等形式保障消费者合法权益</li>
+                                    <li>
+                                        <span class="pagi-left-ul-circle"></span>
+                                        提升信息的透明度和真实性，让信任在追溯平台得以良好的维护。</li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="pagi-right">
+                                <img id="pagi-right-img" src="#" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <script>
+                    
+                    $('#zf').click(function(){
+                        // console.log(666)
+                        $('#zf').addClass('credit-active')
+                        $('#qy').removeClass('credit-active')
+                        $('#xfz').removeClass('credit-active')
+                        $('body,html').animate({scrollTop:380},1500);
+                        
+                        $('#zfImg').attr('src','./img/credit-service/gov.png')
+                        $('#qyImg').attr('src','./img/credit-service/company.png')
+                        $('#xfzImg').attr('src','./img/credit-service/customer.png')
+                    })
+                    $('#qy').click(function(){
+                        // console.log(666)
+                        $('#zf').removeClass('credit-active')
+                        $('#qy').addClass('credit-active')
+                        $('#xfz').removeClass('credit-active')
+                        $('body,html').animate({scrollTop:850},1500);
+
+                        $('#zfImg').attr('src','./img/credit-service/gov-white.png')
+                        $('#qyImg').attr('src','./img/credit-service/company-blue.png')
+                        $('#xfzImg').attr('src','./img/credit-service/customer.png')
+
+                    })
+                    $('#xfz').click(function(){
+                        // console.log(666)
+                        $('#zf').removeClass('credit-active')
+                        $('#qy').removeClass('credit-active')
+                        $('#xfz').addClass('credit-active')
+                        $('body,html').animate({scrollTop:1500},1500);
+
+                        $('#zfImg').attr('src','./img/credit-service/gov-white.png')
+                        $('#qyImg').attr('src','./img/credit-service/company.png')
+                        $('#xfzImg').attr('src','./img/credit-service/customer-blue.png')
+                    })
+
+                    window.onscroll=function(){
+                        var a= getScrollTop()
+                        // console.log(a,66)
+                        if(a>=468){
+                            // console.log(1)
+                            $('#fiex-bar').addClass('fiex-bar')
+                        }else{
+                            $('#fiex-bar').removeClass('fiex-bar')
+                        }
+                    }
+                function getScrollTop() {
+                    var scroll_top = 0;
+                    if (document.documentElement && document.documentElement.scrollTop) {
+                        scroll_top = document.documentElement.scrollTop;
+                    }
+                    else if (document.body) {
+                        scroll_top = document.body.scrollTop;
+                    }
+                    return scroll_top;
+                }
+
+            </script>
+
+           <!--  <script>
+                $(document).ready(function(){
+                    $(window).scroll(function(){
+
+                    })
+
+                }
+            </script> -->
+            <!-- <script>
+                window.onload=function(){
+                    var zf=document.getElementById('zf')
+                    var qy=document.getElementById('qy')
+                    var xfz=document.getElementById('xfz')
+                    
+                    window.onscroll=function(){
+                        
+                    
+                        var scrollTop=document.documentElement.scrollTop
+                        console.log(scrollTop,11)
+                        qy.onclick=function(){
+                            console.log(666)
+                            var scrollTop=document.documentElement.scrollTop
+                            qy.scrollTop=950;
+                        }
+                    }
+                }
+            </script> -->
+            
+
+
+        </div>
+
+    </main>
+
+    <!-- 底部固定框 -->
+    <footer class="container-fluid footer-block">
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：010 5150 3423</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：sunch@nercita.org.cn</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html>

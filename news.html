@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="initial-scale=0.2, maximum-scale=0.5, minimum-scale=0.25, user-scalable=yes">
+    <title>农信码</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./swiper/css/swiper.min.css">
+    <style>
+        .chosen{
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 4px;
+        }
+        .header-bg{
+            /* background: url('./img/news/bg.png') no-repeat      center center; */
+            /* height: 348px; */
+            /* background-color: #3670E7; */
+            /* background-color: #125ae9; */
+            background-color: #3C5DA6;
+        }
+        
+
+        .caret-right{
+           margin: 0 10px;
+        }
+        .news-main-title{
+            margin-top: 4px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #8E9193;
+            line-height: 105px; 
+        }
+        .news-row-left-title{
+            /* height: 40px; */
+            padding-bottom: 24px;
+            /* border-bottom: 1px solid black; */
+        }
+        .news-row-left-title img{
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+        }
+        .news-row-left-title span{
+        line-height: 55px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #3C5DA6;
+        }
+        .news-row-left-text{
+            width: 744px;
+        }
+        .news-row-left-text ul li{
+            border-top: 1px solid #D2D2D2;
+            padding-bottom: 63px;
+        }
+        .news-row-left-text ul li:nth-child(1){
+            border-top:2px solid  #3C5EA6;
+        }
+        .ul-title{
+            font-size: 22px;
+            font-weight: 500;
+            color: #3B393B;
+            line-height: 24px;
+            margin-top: 28px;
+        }
+        .ul-msg{
+            margin-top: 20px;
+            display: flex;
+        }
+        .ul-left{
+            width: 268px;
+            /* background: #555555; */
+            margin-right: 29px;
+            position: relative;
+        }
+        .ul-left img{
+            width: 268px;
+            height: 166px;
+        }
+        .ul-right{
+            width: 453px;
+            /* height: 166px; */
+        }
+        .ul-right div br{
+            
+            /* height: 166px; */
+        }
+        .ul-right div{
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 25px;
+            text-indent: 28px;
+            /* height:100px; */
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:4;
+            overflow:hidden;
+            text-overflow: ellipsis;
+        }
+        .ul-right p{
+            /* width: 453px ; */
+            width: 100%;
+            font-size: 14px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 25px;
+        }
+        .ul-right p:last-child{
+            font-size: 16px;
+            font-weight: 400;
+            color: #3E6ED8;
+            line-height: 46px;
+        }
+        .ul-right p:not(:last-child){
+            text-indent: 28px;
+        }
+        
+        .time{
+            width: 58px;
+            height: 60px;
+            background: #3C5EA6;
+            opacity: 0.59;
+            position: absolute;
+            left: 10px;
+            top: 95px;
+        }
+        .time p{
+            text-align: center;
+            font-size: 28px;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+        
+        .time p:nth-child(2){
+            font-size: 13px;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+        
+        .policy-document-box1{
+            margin-top: 23px;
+        }
+        .policy-document-box1 img{
+            width: 15px;
+            height: 14px;
+            margin-bottom: 4px;
+            margin-right: 7px;
+        }
+        .policy-document-box1 span{
+            font-size: 14px;
+            font-weight: bold;
+            color: #ADADAD;
+            line-height: 24px;
+        }
+        .policy-document ul li p{
+            font-size: 14px;
+            font-weight: bold;
+            color: #727374;
+            line-height: 25px;
+            margin-top: 7px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+        .policy-document ul li{
+            /* border-top: 1px solid #D1D1D1; */
+            border-bottom: 1px solid #D1D1D1;
+            margin-bottom: 26px;
+        }
+        .policy-document ul li:nth-child(1){
+            border-top: 1px solid #D1D1D1;
+        }
+        .swiper1-silde{
+            width: 332px;
+            height: 254px;
+            /* height: 204px; */
+            /* position: relative; */
+        }
+        .swiper1-silde img{
+            height: 204px;
+            width: 100%;
+        }
+        .gotopss{
+            position: absolute;
+            width: 332px;
+            height: 85px;
+            background: #3C5EA6;
+            /* background: black; */
+            opacity: 0.8;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 25px;
+            color: #FFFFFF;
+            bottom: 50px;
+            /* text-align: center; */
+            padding: 23px 23px;
+            z-index: 10;
+        }
+        .swiper1-pagination{
+            
+        }
+        .swiper-container{
+            position: static;
+        }
+        .swiper-pagination-bullet{
+            width: 12px;
+            height: 12px;
+            margin: 0 6px;
+        }
+        .gotohtml{
+            cursor: pointer;
+        }
+    </style>
+   
+    <script src="./swiper/js/swiper.min.js"></script>
+</head>
+<body>
+    
+    <header>
+        <div class="container-fluid header-bg" >
+            <!-- 通用导航栏 -->
+            <script>
+                function showshadow(){
+                    var obg=document.getElementById("header-top")
+                    // console.log(555)
+                    obg.classList.add("header-focus")
+                    // obg.style.background='black'
+                    
+                }
+                function hideshadow(){
+                    var obg=document.getElementById("header-top")
+                    obg.classList.remove("header-focus")
+                    // obg.style.background='none'
+                }
+                
+            </script>   
+
+            <div class="container-fluid header-top" id="header-top"  onmouseover="showshadow()" onmouseout="hideshadow()" >
+                <div class="container nav-line">
+                    <div class="col-xs-3 nav-height" >
+                        <div style="background: url('./img/index/logo.png'); width: 135px ;height: 52px;">
+                        </div>
+                    </div>
+                    <div class="col-xs-6 nav-height">
+                        <ul class="nav-ul" >
+                            <li>
+                                <a href="./index.html" class="">首页</a>
+                                <!-- <span class="chosen">首页</span> -->
+                            </li>
+                            <li>
+                                <a  href="./credit-service.html">农信服务</a>
+                                <!-- <span>农信服务</span> -->
+                            </li>
+                            <!-- <li onmouseover="myClickshow()" onmouseout="myClickhide()"  style="position: relative;"  id="gogogo" > -->
+                            <li  style="position: relative;"  id="gogogo" >
+                                <a href="./news.html" class="chosen">新闻动态</a>
+
+                                <ul  style="    top: 102px; position: absolute; height: auto; background: rgba(0,0,0,0.9);">
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoice">
+                                        <a href="./enterprise-join.html">企业加盟</a> </li>
+                                    <li style="display: none; height: 60px; line-height: 60px; " id="showchoices">
+                                        <a href="./news.html">新闻动态</a>
+                                        </li>
+                                </ul>
+                            </li>
+                            <script >
+                                function myClickshow(){ 
+                                var oLi=document.querySelector('#gogogo')
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // oLi.style.height="100px";
+                                event.style.display="block";
+                                events.style.display="block";
+                            }
+                                function myClickhide(){
+                                var event=document.getElementById('showchoice');
+                                var events=document.getElementById('showchoices');
+                                // console.log(111)
+                                event.style.display="none";
+                                events.style.display="none";
+                            }
+                            </script>
+                            <!-- <li>
+                                <a href="#">公共服务</a>
+                               
+                            </li> -->
+                            <li>
+                                <a href="./contact.html">联系我们</a>
+                                <!-- <span>联系我们</span> -->
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3 nav-height">
+                        <div class="col-xs-6 col-xs-offset-6 nav-height">
+                            <ul class="nav-loggin">
+                                <li>
+                                    <a href="login.html">登录</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">注册</a>
+                                 </li>
+                            </ul>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            
+        </div>
+    </header>
+    
+
+    <main>
+        <div class="container">
+            <div class="news-main-title">
+               <span style="cursor: pointer;" onclick = "window.location.href = './index.html'">首页</span>  <i class="fa fa-caret-right caret-right" aria-hidden="true"></i><span style="cursor: pointer;" onclick = "window.location.href = './news.html'">新闻动态</span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    <div class="news-row-left-title">
+                        <img src="./img/news/news-logo.png" alt="">
+                        <span>新闻动态</span>
+                    </div>
+                    <div class="news-row-left-text">
+                        <ul>
+                            <li>
+                                <div class="ul-title" style="cursor: pointer;"  onclick = "window.location.href = './news-detail-1.html'">
+                                    斯莱克：阿里系科技赋能，区块链防伪溯源
+                                </div>
+                                <div class="ul-msg">
+                                    <div class="ul-left">
+                                        <img src="./img/news/news-img1.png" alt="">
+                                        <div class="time">
+                                            <p>30</p>
+                                            <p>2020/09</p>
+                                        </div>
+                                    </div>
+                                    <div class="ul-right">
+                                        <div>
+                                            9月30日午间，斯莱克(300382.SZ)发布就区块链在商品防伪溯源方面展开对外合作的公告。公告显示，斯莱克与蚂蚁区块链科技(上海)有限公司(简称“蚂蚁区块链”)签署了《蚂蚁区块链溯源平台服务协议》，蚂蚁区块链作为斯莱克蚂蚁链保真链体系运营合作项目的承包方，为斯莱克提供全产业链及合作所需的SaaS服务，包括蚂蚁商流链服务平台和溯源管理服务、支付宝扫码服务、区块链节点服务、业务配置服务等支撑服务事宜。
+                                        </div>
+                                        <!-- <p>9月30日午间，斯莱克(300382.SZ)发布就区块链在商品防伪溯源方面展开对外合作的公告。公告显示，斯莱克与蚂蚁区块链科技(上海)有限公司(简称“蚂蚁区块链”)签署了《蚂蚁区块链溯源平台服务协议》，蚂蚁区块链作为斯莱克蚂蚁链保真链体系运营合作项目的承包方，为斯莱克提供全产业链及合作所需的SaaS服务，包括蚂蚁商流链服务平台和溯源管理服务、支付宝扫码服务、区块链节点服务、业务配置服务等支撑服务事宜。</p> -->
+                                        <p class="gotohtml" onclick = "window.location.href = './news-detail-1.html'">阅读正文></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ul-title" style="cursor: pointer;" onclick = "window.location.href = './news-detail-2.html'">
+                                    解构京东数科区块链：孵化于供应链溯源场景，背靠京东零售和物流
+                                </div>
+                                <div class="ul-msg">
+                                    <div class="ul-left">
+                                        <img src="./img/news/news-img2.png" alt="">
+                                        <div class="time">
+                                            <p>02</p>
+                                            <p>2020/07</p>
+                                        </div>
+                                    </div>
+                                    <div class="ul-right">
+                                        <div>京东数科的区块链品牌为“智臻链”。2016年10月，京东组建区块链技术团队，开始了对于区块链技术的价值探索和产业应用。
+                                        </br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2019年下半年，京东数科开始面向客户提供区块链相关服务。在此之前，区块链技术及相关应用主要供京东集团内部使用。目前，京东数科提供的区块链服务主要包括区块链技术平台、商品溯源、数字存证、ABS云平台、电子合同等五大服务。其中，区块链技术平台主要包括JD Chain 和智臻链 BaaS 两大核心技术平台。</div>
+                                        <!-- <p>京东数科的区块链品牌为“智臻链”。2016年10月，京东组建区块链技术团队，开始了对于区块链技术的价值探索和产业应用。</p> -->
+                                        <!-- <p>2019年下半年，京东数科开始面向客户提供区块链相关服务。在此之前，区块链技术及相关应用主要供京东集团内部使用。目前，京东数科提供的区块链服务主要包括区块链技术平台、商品溯源、数字存证、ABS云平台、电子合同等五大服务。其中，区块链技术平台主要包括JD Chain 和智臻链 BaaS 两大核心技术平台。</p> -->
+                                       
+                                        <p class="gotohtml" onclick = "window.location.href = './news-detail-2.html'">阅读正文></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ul-title" style="cursor: pointer;" onclick = "window.location.href = './news-detail-3.html'">
+                                    区块链防伪溯源让你明明白白吃个蟹
+                                </div>
+                                <div class="ul-msg">
+                                    <div class="ul-left">
+                                        <img src="./img/news/news-img3.png" alt="">
+                                        <div class="time">
+                                            <p>02</p>
+                                            <p>2020/07</p>
+                                        </div>
+                                    </div>
+                                    <div class="ul-right">
+                                        <div>
+                                            在今年，食者无忧旗下研发的食神区块链防伪溯源系统首次在大闸蟹上运用到了区块链防伪溯源技术。</br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、在大闸蟹养殖时，给每一只经过检验合格的大闸蟹佩戴-枚RFID防伪电子标签 。</br>
+2、在大闸蟹的外包装盒上粘贴防伪标签,在运输包装箱上粘贴物流跟踪RF ID电子标签,同时完成防伪标签和物流跟踪标签的初始化，二维码数据保存到区块链上,用于大闸蟹溯源。</br>
+3、配送发货时通过使用F ID手持机扫描物流跟踪标签并上传发货信息到区块链数据库，大闸蟹经销商收货时同样用RF ID手持机扫描物流跟踪标签,将这些数据上传到大闸蟹溯源的服务平台数据库。</br>
+4、消费者购买大闸蟹后可以使用扫一扫功能，扫描大闸蟹包装的RFID防伪电子标签或溯源二维码，获取所购买大闸蟹溯源的信息。</br>
+5、经销商完成销售之后可以直接把销售数据上传到区块链数据库中。
+                                        </div>
+                                        <!-- <p>在今年，食者无忧旗下研发的食神区块链防伪溯源系统首次在大闸蟹上运用到了区块链防伪溯源技术。</p> -->
+                                        <!-- <p>1、在大闸蟹养殖时，给每一只经过检验合格的大闸蟹佩戴-枚RFID防伪电子标签 。</p> -->
+                                        <!-- <p>2、在大闸蟹的外包装盒上粘贴防伪标签,在运输包装箱上粘贴物流跟踪RF ID电子标签,同时完成防伪标签和物流跟踪标签的初始化，二维码数据保存到区块链上,用于大闸蟹溯源。</p> -->
+                                        <!-- <p>3、配送发货时通过使用F ID手持机扫描物流跟踪标签并上传发货信息到区块链数据库，大闸蟹经销商收货时同样用RF ID手持机扫描物流跟踪标签,将这些数据上传到大闸蟹溯源的服务平台数据库。</p> -->
+                                        <!-- <p>4、消费者购买大闸蟹后可以使用扫一扫功能，扫描大闸蟹包装的RFID防伪电子标签或溯源二维码，获取所购买大闸蟹溯源的信息。</p> -->
+                                        <!-- <p>5、经销商完成销售之后可以直接把销售数据上传到区块链数据库中。</p> -->
+                                        <p class="gotohtml" onclick = "window.location.href = './news-detail-3.html'">阅读正文></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ul-title" style="cursor: pointer;" onclick = "window.location.href = './news-detail-4.html'">
+                                    GNS溯源链瞄准300亿美元市场,2021年100倍增长可期
+                                </div>
+                                <div class="ul-msg">
+                                    <div class="ul-left">
+                                        <img src="./img/news/news-img4.png" alt="">
+                                        <div class="time">
+                                            <p>02</p>
+                                            <p>2020/10</p>
+                                        </div>
+                                    </div>
+                                    <div class="ul-right">
+                                        <div>
+                                            目前流通市值只有4亿元的GNS金牛链处于孵化上升阶段，可以说，2020年10倍增长、实现40亿流通市值，对GNS而言，难度并不大。</br>
+据了解，GNS提供的其实是区块链基础网络架构，技术服务商可以借助GNS的免费API接口做开发，简单快捷地为自己的品牌企业客户开发区块链溯源系统；有技术实力的品牌企业也可以直接在GNS上搭建自己的商品溯源子链，快速链化企业溯源系统。</br>
+GNS的适用领域很广，比如，食品安全、医药及保健品、母婴、烟酒、奢侈品、化妆品、出版、IP衍生品、艺术收藏品等领域的溯源防伪。发展初期，GNS把食品的溯源作为自己的市场起点。数据显示，全球食品的溯源，未来3年有40%的增长空间，到2021年，全球食品/农产品溯源市场规模将会超过300亿美元。
+                                        </div>
+                                        <!-- <p>目前流通市值只有4亿元的GNS金牛链处于孵化上升阶段，可以说，2020年10倍增长、实现40亿流通市值，对GNS而言，难度并不大。</p> -->
+                                        <!-- <p>据了解，GNS提供的其实是区块链基础网络架构，技术服务商可以借助GNS的免费API接口做开发，简单快捷地为自己的品牌企业客户开发区块链溯源系统；有技术实力的品牌企业也可以直接在GNS上搭建自己的商品溯源子链，快速链化企业溯源系统。</p> -->
+                                        <!-- <p>GNS的适用领域很广，比如，食品安全、医药及保健品、母婴、烟酒、奢侈品、化妆品、出版、IP衍生品、艺术收藏品等领域的溯源防伪。发展初期，GNS把食品的溯源作为自己的市场起点。数据显示，全球食品的溯源，未来3年有40%的增长空间，到2021年，全球食品/农产品溯源市场规模将会超过300亿美元。</p> -->
+                                        <p class="gotohtml" onclick = "window.location.href = './news-detail-4.html'">阅读正文></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ul-title" style="cursor: pointer;" onclick = "window.location.href = './news-detail-5.html'">
+                                    NGK公链的溯源支付体系正在加速落地
+                                </div>
+                                <div class="ul-msg">
+                                    <div class="ul-left">
+                                        <img src="./img/news/news-img5.png" alt="">
+                                        <div class="time">
+                                            <p>02</p>
+                                            <p>2020/10</p>
+                                        </div>
+                                    </div>
+                                    <div class="ul-right">
+                                        <div>
+                                            由于传统的溯源行业面临不被信任、被篡改、追溯手段简单等各种问题，使得区块链为溯源信息提供了新的工具。有了区块链技术的加持，所有信息即时上链就无法更改，特别是区块链的去中心化特征解决了溯源中最大的难题信任问题，也提供了公信力溯源能力。</br>
+NGK公链，作为基于区块链技术的去中心化商业应用平台，积极探索解决交易支付溯源问题。借助区块链这项技术，NGK公链将交易双方的交易、生成及商品流通以及销售过程等信息都整合写入到区块链当中，既可有效地保证数据真实性，又能实现全流程的追溯。信息上链，就代表了不可篡改性，也确定了支付交易双方唯一的身份，基于此实现了这个身份流转的所有追踪和记录。</br>
+NGK结合区块链去中心化和不可篡改的特性，通过机器语言来解决数据来源和数据信任问题，保证NGK链上全链条的数据真实性。NGK的设计既为数字交易上的数据传输和价值流转提供稳定可靠的技术平台，又能保证支付交易数据在采集、运算、存储和传输过程的安全。</br>
+NGK全链的一切制度都是基于区块链的底层设施，同时按照智能合约去运行，利用NGK分布式存储，来保证全链条的数据真实性，公开、透明、公正、不可篡改和数据可追溯。</br>
+NGK为溯源支付数据的隐私保护、协同计算提供基础设施和全方位治理；并且高效、安全实现溯源数据的充分流动。与此同时，NGK充分利用区块链分布式数据存储、共识机制、点对点传输等技术，加密共享交易信息，完成各行各业内应用系统与区块链平台的整合，无缝衔接新技术、传统行业和现有应用系统。</br>
+区块链光环下的溯源能力，被NGK深度赋能于综合支付的交易体系当中。NGK将以崭新的思维模式、技术架构推动整个支付经济的技术、框架、效率以及模式的变革！
+                                        </div>
+                                        <!-- <p>由于传统的溯源行业面临不被信任、被篡改、追溯手段简单等各种问题，使得区块链为溯源信息提供了新的工具。有了区块链技术的加持，所有信息即时上链就无法更改，特别是区块链的去中心化特征解决了溯源中最大的难题信任问题，也提供了公信力溯源能力。</p>
+                                        <p>NGK公链，作为基于区块链技术的去中心化商业应用平台，积极探索解决交易支付溯源问题。借助区块链这项技术，NGK公链将交易双方的交易、生成及商品流通以及销售过程等信息都整合写入到区块链当中，既可有效地保证数据真实性，又能实现全流程的追溯。信息上链，就代表了不可篡改性，也确定了支付交易双方唯一的身份，基于此实现了这个身份流转的所有追踪和记录。</p>
+                                        <p>NGK结合区块链去中心化和不可篡改的特性，通过机器语言来解决数据来源和数据信任问题，保证NGK链上全链条的数据真实性。NGK的设计既为数字交易上的数据传输和价值流转提供稳定可靠的技术平台，又能保证支付交易数据在采集、运算、存储和传输过程的安全。</p>
+                                       <p>NGK全链的一切制度都是基于区块链的底层设施，同时按照智能合约去运行，利用NGK分布式存储，来保证全链条的数据真实性，公开、透明、公正、不可篡改和数据可追溯。</p>
+                                        <p>NGK为溯源支付数据的隐私保护、协同计算提供基础设施和全方位治理；并且高效、安全实现溯源数据的充分流动。与此同时，NGK充分利用区块链分布式数据存储、共识机制、点对点传输等技术，加密共享交易信息，完成各行各业内应用系统与区块链平台的整合，无缝衔接新技术、传统行业和现有应用系统。</p>
+                                        <p>区块链光环下的溯源能力，被NGK深度赋能于综合支付的交易体系当中。NGK将以崭新的思维模式、技术架构推动整个支付经济的技术、框架、效率以及模式的变革！</p> -->
+                                        <p class="gotohtml" onclick = "window.location.href = './news-detail-5.html'">阅读正文></p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="ul-title" style="cursor: pointer;" onclick = "window.location.href = './news-detail-6.html'">
+                                    报告：中国区块链专利申请数约占全球一半
+                                <div class="ul-msg">
+                                    <div class="ul-left">
+                                        <img src="./img/news/news-img6.png" alt="">
+                                        <div class="time">
+                                            <p>02</p>
+                                            <p>2020/10</p>
+                                        </div>
+                                    </div>
+                                    <div class="ul-right">
+                                        <!-- <p>近日，由清华大学、北京大学和中国通信学会编制的《2020区块链产业发展报告》，在江西南昌召开的2020中国国际区块链技术与应用大会上发布。报告显示，截至目前中国区块链专利申请数为4435件，约占全球一半。区块链技术具有不可伪造、去中心化、全程留痕、公开透明等特点，是下一代可信互联网的核心技术。中国工程院院士陈晓红介绍，目前区块链、大数据、物联网、人工智能等新一代信息技术呈现相互融合的趋势，共同成为数字经济的基础。</p> -->
+                                        <!-- <p>近年来，国内区块链产业发展加速，应用落地步伐加快，  已从早期的加密货币等少数领域逐渐向物流、工业物联网、医疗健康、农业等多领域拓展，赋能千行百业的潜力逐渐显现。国内科技公司也纷纷将目光投向区块链。例如，华为为企业及开发者提供公有云区块链服务，帮助客户在华为云上快速、低成本地创建、部署和管理区块链应用及商业智能合约服务；京东将重点放在商品的防伪追溯上，商品原料的生产、加工、物流运输、零售交易等数据都可上链。</p> -->
+                                        <div> 
+                                            近日，由清华大学、北京大学和中国通信学会编制的《2020区块链产业发展报告》，在江西南昌召开的2020中国国际区块链技术与应用大会上发布。报告显示，截至目前中国区块链专利申请数为4435件，约占全球一半。区块链技术具有不可伪造、去中心化、全程留痕、公开透明等特点，是下一代可信互联网的核心技术。中国工程院院士陈晓红介绍，目前区块链、大数据、物联网、人工智能等新一代信息技术呈现相互融合的趋势，共同成为数字经济的基础。
+                                            近年来，国内区块链产业发展加速，应用落地步伐加快，已从早期的加密货币等少数领域逐渐向物流、工业物联网、医疗健康、农业等多领域拓展，赋能千行百业的潜力逐渐显现。国内科技公司也纷纷将目光投向区块链。例如，华为为企业及开发者提供公有云区块链服务，帮助客户在华为云上快速、低成本地创建、部署和管理区块链应用及商业智能合约服务；京东将重点放在商品的防伪追溯上，商品原料的生产、加工、物流运输、零售交易等数据都可上链。
+                                        </div>
+                                        
+                                        <p class="gotohtml" onclick = "window.location.href = './news-detail-6.html'">阅读正文></p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-4" style="padding-left: 68px;margin-bottom: 24px;">
+                    <div class="row">
+                            <div class="news-row-left-title">
+                                <img src="./img/news/industry.png" alt="">
+                                <span>行业动态</span>
+                            </div>
+                            <div class="swiper" style="position: relative;" >
+                                <div class="swiper-container swiper1">
+                                    <div class="swiper-wrapper swiper1">
+                                        <div class="swiper-slide swiper1-silde" onclick = "window.location.href = './news-detail-1.html'">
+                                          <img src="./img/news/news-img1.png" alt="">
+                                          <div class="gotopss">斯莱克：阿里系科技赋能，区块链防伪溯源  </div>
+                                        </div>
+                                        <div class="swiper-slide swiper1-silde" onclick = "window.location.href = './news-detail-2.html'">
+                                          <img   src="./img/news/news-img2.png" alt="">
+                                          <div class="gotopss">解构京东数科区块链：孵化于供应链溯源场景，背靠京东零售和物流  </div>
+                                        </div>
+                                        <div class="swiper-slide swiper1-silde" onclick = "window.location.href = './news-detail-3.html'">
+                                          <img   src="./img/news/news-img3.png" alt="">
+                                          <div class="gotopss">区块链防伪溯源让你明明白白吃个蟹  </div>
+                                        </div>
+                                      
+                                    </div>
+                                    <div class="swiper-pagination swiper1-pagination">
+                                    </div>
+                                  </div>
+
+                                <script>
+                                    var mySwiper = new Swiper('.swiper-container', {
+                                                autoplay: true,
+                                                pagination: {
+                                                el: '.swiper-pagination',
+                                                clickable :true,
+                                            }
+                                            })
+                                </script>
+                                <!-- <div style="width: 100%;height: 80px;"> null</div> -->
+                                <!-- <img src="./img/news/swiper-img.png" alt=""> -->
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="news-row-left-title">
+                                <img src="./img/news/policy-document.png" alt="">
+                                <span>政策文件</span>
+                            </div>
+                            <div class="policy-document">
+                               <ul>
+                                   <li>
+                                       <div class="policy-document-box1">
+                                            <img src="./img/news/time.png" alt="">
+                                            <span>2019.02.15</span>
+                                        </div>
+                                       <p  onclick = "window.location.href = './news-detail-policy1.html'">《区块链信息服务管理规定》</p>
+                                   </li>
+                                   <li> 
+                                       <div class="policy-document-box1">
+                                            <img src="./img/news/time.png" alt="">
+                                            <span>2019.05.19</span>
+                                        </div>
+                                       <p onclick = "window.location.href = './news-detail-policy2.html'">2018中国区块链产业白皮书</p>
+                                   </li>
+                                   <li>
+                                       <div class="policy-document-box1">
+                                            <img src="./img/news/time.png" alt="">
+                                            <span>2019.08.01</span>
+                                        </div>
+                                       <p onclick = "window.location.href = './news-detail-policy3.html'">区块链首次被作为战略性前沿技术写入《国务院关于印发“十三五”国家信息化规划的通知》</p>
+                                   </li>
+                               </ul>
+                            </div>
+                    </div>
+
+                    <!-- 通知公告 -->
+                   <!--  <div class="row">
+                            <div class="news-row-left-title">
+                                <img src="./img/news/announcement.png" alt="">
+                                <span>通知公告</span>
+                            </div>
+                            <div class="policy-document">
+                               <ul>
+                                   <li>
+                                       <div class="policy-document-box1">
+                                            <img src="./img/news/time.png" alt="">
+                                            <span>2020.05.15</span>
+                                        </div>
+                                       <p>企业作为一种基本的社会经济组织即将开幕</p>
+                                   </li>
+                                   <li>
+                                       <div class="policy-document-box1">
+                                            <img src="./img/news/time.png" alt="">
+                                            <span>2020.05.15</span>
+                                        </div>
+                                       <p>企业作为一种基本的社会经济组织即将开幕</p>
+                                   </li>
+                                   <li>
+                                       <div class="policy-document-box1">
+                                            <img src="./img/news/time.png" alt="">
+                                            <span>2020.05.15</span>
+                                        </div>
+                                       <p>企业作为一种基本的社会经济组织即将开幕企业作为 一种基本的社会经济组织即将开幕 </p>
+                                   </li>
+                               </ul>
+                            </div>
+                    </div> -->
+                    
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    
+
+    <!-- 底部固定框 -->
+    <footer class="container-fluid footer-block">
+        <div class="container ">
+                <div style="margin-top: 48px;">
+                    <p style="text-align: center;">©2018 - 2020 INSPUR Co., Ltd. 京ICP备123901823号</p>
+                </div>
+                <div class="footer-article">
+                    <span>联系电话：010 5150 3423</span>
+                    <span>服务时间：工作日（9:00~18:00）</span>
+                    <span>邮箱：sunch@nercita.org.cn</span>
+                </div>
+        </div>
+    </footer>
+</body>
+</html> 
